@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "docs": "start .\\scripts\\codedoc",
     "docs:live": "start .\\scripts\\codedoc-live",
-    "save": "start .\\scripts\\snapshot"
+    "save": "start .\\scripts\\snapshot",
+    "deploy": "start .\\scripts\\deploy"
   },
   "private": true,
   "dependencies": {
