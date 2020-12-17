@@ -1,0 +1,1 @@
+compodoc -p tsconfig.json -d docs -n Camera-Map src --hideGenerator --theme readthedocs -s -r %random% -w -o

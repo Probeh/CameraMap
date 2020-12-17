@@ -1,0 +1,18 @@
+<div class="card content-card">
+  <div class="card-header">
+    <div class="title">Available Cameras</div>
+    <button class="btn action-btn btn-sm"><i class="fa fa-refresh"></i></button>
+  </div>
+  <div class="card-body">
+    <div class="list-group">
+      <button
+        *ngFor="let camera of this.cameraList$ | async; index as i"
+        type="button"
+        class="btn list-group-item list-group-item-action"
+        (click)="this.onSelection(camera.id)"
+      >
+        <i class="fa fa-video-camera"></i>
+        #{{i+1 | number: '2.0'}} {{camera.name}}</button>
+    </div>
+  </div>
+</div>

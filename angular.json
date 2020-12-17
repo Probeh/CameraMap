@@ -7,29 +7,31 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "export": false,
+          "skipImport": true,
+          "skipTests": true,
           "style": "scss",
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
+          "spec": false
         },
         "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
+          "export": false,
+          "skipImport": true,
+          "skipTests": true,
+          "spec": false
         },
         "@schematics/angular:module": {
+          "commonModule": true,
+          "routing": true,
+          "routingScope": "Child",
           "skipTests": true
         },
         "@schematics/angular:pipe": {
-          "skipTests": true
+          "skipTests": true,
+          "spec": false
         },
         "@schematics/angular:service": {
-          "skipTests": true
+          "skipTests": true,
+          "spec": false
         }
       },
       "root": "",
@@ -50,9 +52,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/assets/styles/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            },
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {

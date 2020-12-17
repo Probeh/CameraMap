@@ -1,0 +1,26 @@
+@import "themes.scss";
+
+.content {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .content-header {
+    height: 50px;
+    max-height: 50px;
+  }
+  .content-body {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    overflow-y: auto;
+  }
+  .content-panel {
+    width: 250px;
+    background: $light;
+  }
+  .content-main {
+    flex: auto;
+  }
+}

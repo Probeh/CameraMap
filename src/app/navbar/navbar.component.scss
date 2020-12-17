@@ -1,0 +1,40 @@
+@import "themes.scss";
+
+.navigation {
+  background: $theme;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 30px;
+  color: white;
+
+  .nav-brand {
+    font-size: 20px;
+  }
+  .nav-actions {
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .nav-start {
+    }
+    .nav-end {
+    }
+  }
+
+  .nav-action {
+    margin-left: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  .nav-action:hover {
+    background: lighten($color: $theme, $amount: 10%);
+  }
+}
+.btn-text {
+  margin-left: 5px;
+}

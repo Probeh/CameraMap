@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+
+import { Component } from '@angular/core'
+import { Camera } from '@common/models/camera.model'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'CameraMap';
+  public current: Camera;
 }

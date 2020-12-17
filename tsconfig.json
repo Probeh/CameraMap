@@ -8,13 +8,34 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
+    "types": [
+      "googlemaps"
+    ],
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@cameramap/*": [
+        "src/app/camera-map/*"
+      ],
+      "@common/*": [
+        "src/app/@common/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@env/*": [
+        "src/environments/*"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ]
+    }
   }
 }

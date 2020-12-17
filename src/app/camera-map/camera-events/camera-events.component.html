@@ -1,0 +1,18 @@
+<div class="card content-card">
+  <div class="card-header">
+    <div class="title">Active Events</div>
+  </div>
+  <div class="card-body">
+    <div class="list-group">
+      <button
+        *ngFor="let event of this.cameraEvents$ | async; let index = index"
+        type="button"
+        class="btn list-group-item list-group-item-action"
+      >
+        <i class="fa fa-flag"></i>
+        {{index}}
+
+      </button>
+    </div>
+  </div>
+</div>

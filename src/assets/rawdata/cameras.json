@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "Neptune",
+    "coordinates": {
+      "lat": 32.083333,
+      "lng": 34.7999968
+    }
+  },
+  {
+    "id": "2",
+    "name": "Venus",
+    "coordinates": {
+      "lat": 32.083333,
+      "lng": 34.7999968
+    }
+  },
+  {
+    "id": "3",
+    "name": "Saturn",
+    "coordinates": {
+      "lat": 32.083333,
+      "lng": 34.7999968
+    }
+  },
+  {
+    "id": "4",
+    "name": "Mercury",
+    "coordinates": {
+      "lat": 32.083333,
+      "lng": 34.7999968
+    }
+  },
+  {
+    "id": "5",
+    "name": "Jupiter",
+    "coordinates": {
+      "lat": 32.083333,
+      "lng": 34.7999968
+    }
+  }
+]
