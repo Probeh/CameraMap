@@ -171,7 +171,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#setCameras">setCameras</a>
+                                <a href="#showCameras">showCameras</a>
                             </li>
                         </ul>
                     </td>
@@ -388,8 +388,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/camera-map/camera-map.component.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/camera-map/camera-map.component.ts:60</a></div>
                 </td>
             </tr>
 
@@ -460,8 +460,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/camera-map/camera-map.component.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/camera-map/camera-map.component.ts:64</a></div>
                 </td>
             </tr>
 
@@ -512,20 +512,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="setCameras"></a>
+                    <a name="showCameras"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Private</span>
-                            setCameras
+                            showCameras
                         </b>
-                        <a href="#setCameras"><span class="icon ion-ios-link"></span></a>
+                        <a href="#showCameras"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>setCameras(cameras: <a href="../interfaces/Camera.html">Camera[]</a>)</code>
+                    <code>showCameras(cameras: <a href="../interfaces/Camera.html">Camera[]</a>)</code>
                 </td>
             </tr>
 
@@ -796,14 +796,13 @@ export class CameraMapComponent implements OnInit {
     this.mapService
       .loadMap(element)
       .then((result) &#x3D;&gt; this.googleMaps &#x3D; result)
-      .then(() &#x3D;&gt; this.cameraList$.subscribe({ next: (result) &#x3D;&gt; this.setCameras(result) }));
+      .then(() &#x3D;&gt; this.cameraList$.subscribe({ next: (result) &#x3D;&gt; this.showCameras(result) }));
 
   }
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  private setCameras(cameras: Camera[]) {
+  private showCameras(cameras: Camera[]) {
     for (let index &#x3D; 0; index &lt; cameras.length; index++) {
       setTimeout(() &#x3D;&gt; {
-        console.log(&#x27;Loading Camera Item: &#x27;, cameras[index]);
         const element &#x3D; cameras[index];
         const iconSize: number &#x3D; 24;
         const cameraIcon: string &#x3D; &#x60;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Circle-icons-camera.svg/${iconSize}px-Circle-icons-camera.svg.png&#x60;;
@@ -821,7 +820,7 @@ export class CameraMapComponent implements OnInit {
         marker.addListener(&#x27;click&#x27;, () &#x3D;&gt; {
           marker.setAnimation(google.maps.Animation.BOUNCE);
         });
-      }, (index + 1) * 100)
+      }, (index + 1) * 100);
     }
   }
   public onCameraSelection(id: number) {

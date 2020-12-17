@@ -44,7 +44,7 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>Camera</li>
+  <li>ILogEntry</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,7 +62,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/@common/models/camera.model.ts</code>
+            <code>src/app/@common/models/log-entry.interface.ts</code>
         </p>
 
 
@@ -80,13 +80,6 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#coordinates">coordinates</a>
-                                </li>
-                                <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#description">description</a>
-                                </li>
-                                <li>
                                         <a href="#id">id</a>
                                 </li>
                                 <li>
@@ -103,69 +96,6 @@
 
             <section>
                 <h3 id="inputs">Properties</h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="coordinates"></a>
-                                        <span class="name"><b>coordinates</b><a href="#coordinates"><span class="icon ion-ios-link"></span></a></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>coordinates:         <code><a href="../interfaces/Geolocation.html" target="_self" >Geolocation</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/Geolocation.html" target="_self" >Geolocation</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="description"></a>
-                                        <span class="name"><b>description</b><a href="#description"><span class="icon ion-ios-link"></span></a></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>description:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
-                        </tbody>
-                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
@@ -205,7 +135,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>name:         <code><a href="../interfaces/Camera.html" target="_self" >CameraType | string</a></code>
+                                        <code>name:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -213,7 +143,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/Camera.html" target="_self" >CameraType | string</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -229,14 +159,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CameraType } from &#x27;@common/enums/camera-type.enum&#x27;
-import { Geolocation } from &#x27;@common/models/geolocation.model&#x27;
-export interface Camera {
-  id: number;
-  name: CameraType | string;
-  coordinates: Geolocation;
-  description?: string;
-}</code></pre>
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface ILogEntry {
+  id  :number ;
+  name: string;
+}
+</code></pre>
     </div>
 </div>
 
@@ -263,7 +190,7 @@ export interface Camera {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'Camera.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ILogEntry.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

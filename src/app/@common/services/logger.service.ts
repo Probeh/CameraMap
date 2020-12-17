@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core'
 import { LogScope } from '@common/enums/logscope.enum'
-import { ILogEntry } from '@common/models/log-entry.interface'
 
 @Injectable()
 export class LoggerService {
