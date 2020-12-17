@@ -30,14 +30,13 @@ export class CameraMapComponent implements OnInit {
     this.mapService
       .loadMap(element)
       .then((result) => this.googleMaps = result)
-      .then(() => this.cameraList$.subscribe({ next: (result) => this.setCameras(result) }));
+      .then(() => this.cameraList$.subscribe({ next: (result) => this.showCameras(result) }));
 
   }
   // ======================================= //
-  private setCameras(cameras: Camera[]) {
+  private showCameras(cameras: Camera[]) {
     for (let index = 0; index < cameras.length; index++) {
       setTimeout(() => {
-        console.log('Loading Camera Item: ', cameras[index]);
         const element = cameras[index];
         const iconSize: number = 24;
         const cameraIcon: string = `https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Circle-icons-camera.svg/${iconSize}px-Circle-icons-camera.svg.png`;
@@ -55,7 +54,7 @@ export class CameraMapComponent implements OnInit {
         marker.addListener('click', () => {
           marker.setAnimation(google.maps.Animation.BOUNCE);
         });
-      }, (index + 1) * 100)
+      }, (index + 1) * 100);
     }
   }
   public onCameraSelection(id: number) {

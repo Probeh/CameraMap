@@ -6,9 +6,11 @@ import { KeyValue } from '@common/helpers/key-value'
 import { MapOptions } from '@common/helpers/map.config'
 import { CameraEvent } from '@common/models/camera-event.model'
 import { Camera } from '@common/models/camera.model'
+import { LoggerService } from '@common/services/logger.service'
 import { environment } from '@env/environment.prod'
 import { Loader } from '@googlemaps/js-api-loader'
-import { Geolocation } from '@common/models/geolocation.model'
+import { LogScope } from '@common/enums/logscope.enum'
+import { ILogEntry } from '@common/models/log-entry.interface'
 
 @Injectable()
 export class CameraMapService {
@@ -20,7 +22,7 @@ export class CameraMapService {
   public cameraList$: BehaviorSubject<Camera[]> = new BehaviorSubject(this._cameraList);
   public eventsList$: Observable<CameraEvent[]> = new BehaviorSubject(this._eventsList.value);
   // ======================================= //
-  constructor(private options: MapOptions, private http: HttpClient) {
+  constructor(private options: MapOptions, private logger: LoggerService, private http: HttpClient) {
     this.getCameras();
     this.setEventListener();
   }
@@ -30,6 +32,9 @@ export class CameraMapService {
       .get<Camera[]>('cameras')
       .pipe(tap(result => this._cameraList = result))
       .pipe(tap(result => this.cameraList$.next(result)))
+      .pipe(tap(result => {
+        this.logger.log(LogScope.Cameras, result)
+      }))
       .toPromise()
   }
   private setEventListener() {
