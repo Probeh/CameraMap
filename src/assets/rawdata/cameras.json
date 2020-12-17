@@ -2,9 +2,10 @@
   {
     "id": "1",
     "name": "Neptune",
+    "description": "Rabin Square",
     "coordinates": {
-      "lat": 32.083333,
-      "lng": 34.7999968
+      "lat": 32.081454,
+      "lng": 34.779994
     }
   },
   {

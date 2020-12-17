@@ -1,13 +1,14 @@
 import { BehaviorSubject, Observable } from 'rxjs'
-import { tap                         } from 'rxjs/operators'
-import { HttpClient                  } from '@angular/common/http'
-import { EventEmitter   , Injectable } from '@angular/core'
-import { KeyValue                    } from '@common/helpers/key-value'
-import { MapOptions                  } from '@common/helpers/map.config'
-import { CameraEvent                 } from '@common/models/camera-event.model'
-import { Camera                      } from '@common/models/camera.model'
-import { environment                 } from '@env/environment.prod'
-import { Loader                      } from '@googlemaps/js-api-loader'
+import { tap } from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http'
+import { EventEmitter, Injectable } from '@angular/core'
+import { KeyValue } from '@common/helpers/key-value'
+import { MapOptions } from '@common/helpers/map.config'
+import { CameraEvent } from '@common/models/camera-event.model'
+import { Camera } from '@common/models/camera.model'
+import { environment } from '@env/environment.prod'
+import { Loader } from '@googlemaps/js-api-loader'
+import { Geolocation } from '@common/models/geolocation.model'
 
 @Injectable()
 export class CameraMapService {
@@ -20,18 +21,18 @@ export class CameraMapService {
   public eventsList$: Observable<CameraEvent[]> = new BehaviorSubject(this._eventsList.value);
   // ======================================= //
   constructor(private options: MapOptions, private http: HttpClient) {
-    this.setCameras();
-    this.setCameraEvents();
+    this.getCameras();
+    this.setEventListener();
   }
   // ======================================= //
-  private async setCameras(): Promise<Camera[]> {
+  private async getCameras(): Promise<Camera[]> {
     return await this.http
       .get<Camera[]>('cameras')
       .pipe(tap(result => this._cameraList = result))
       .pipe(tap(result => this.cameraList$.next(result)))
       .toPromise()
   }
-  private setCameraEvents() {
+  private setEventListener() {
     this.eventsList$ = new Observable<CameraEvent[]>(
       emitter => {
         setInterval(() => {
@@ -42,7 +43,7 @@ export class CameraMapService {
           }
         }, 5000);
         this._camRefresh
-          .subscribe(() => emitter.next(this._eventsList.value));
+          .subscribe(() => emitter.next(this._eventsList.value.slice()));
       });
   }
   public async loadMap(element: HTMLElement): Promise<GoogleMap> {
@@ -68,3 +69,5 @@ export class CameraMapService {
   }
 }
 export type GoogleMap = google.maps.Map;
+export type MapLatLng = google.maps.LatLng;
+export type MapMarker = google.maps.Marker;
