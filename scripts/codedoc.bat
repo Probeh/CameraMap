@@ -1,1 +1,1 @@
-compodoc -p tsconfig.json -d docs -n Camera-Map src --hideGenerator --theme readthedocs & exit
+compodoc -p tsconfig.json -d src/docs -n Camera-Map src --hideGenerator --theme readthedocs & exit

@@ -244,16 +244,19 @@ export class NavbarComponent implements OnInit {
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;nav-actions&quot;&gt;
     &lt;div class&#x3D;&quot;nav-start&quot;&gt;
-      &lt;button
+      &lt;a
         class&#x3D;&quot;btn nav-action&quot;
-        routerLink&#x3D;&quot;&quot;
-      &gt;&lt;i class&#x3D;&quot;fa fa-code&quot;&gt;&lt;/i&gt; &lt;span class&#x3D;&quot;btn-text&quot;&gt;Api Docs&lt;/span&gt;&lt;/button&gt;
+        target&#x3D;&quot;_blank&quot;
+        href&#x3D;&quot;https://github.com/Probeh/CameraMap/blob/root/docs/index.html&quot;
+      &gt;&lt;i class&#x3D;&quot;fa fa-code&quot;&gt;&lt;/i&gt; &lt;span class&#x3D;&quot;btn-text&quot;&gt;Api Docs&lt;/span&gt;&lt;/a&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;nav-end&quot;&gt;
-      &lt;button
+      &lt;a
+        href&#x3D;&quot;https://github.com/Probeh/CameraMap&quot;
+        target&#x3D;&quot;_blank&quot;
         class&#x3D;&quot;btn nav-action&quot;
         routerLink&#x3D;&quot;&quot;
-      &gt;&lt;i class&#x3D;&quot;fa fa-github&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+      &gt;&lt;i class&#x3D;&quot;fa fa-github&quot;&gt;&lt;/i&gt;&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -330,7 +333,7 @@ export class NavbarComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="navigation">  <div class="nav-brand">    <i class="fa fa-video-camera"></i> Camera Map  </div>  <div class="nav-actions">    <div class="nav-start">      <button        class="btn nav-action"        routerLink=""      ><i class="fa fa-code"></i> <span class="btn-text">Api Docs</span></button>    </div>    <div class="nav-end">      <button        class="btn nav-action"        routerLink=""      ><i class="fa fa-github"></i></button>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="navigation">  <div class="nav-brand">    <i class="fa fa-video-camera"></i> Camera Map  </div>  <div class="nav-actions">    <div class="nav-start">      <a        class="btn nav-action"        target="_blank"        href="https://github.com/Probeh/CameraMap/blob/root/docs/index.html"      ><i class="fa fa-code"></i> <span class="btn-text">Api Docs</span></a>    </div>    <div class="nav-end">      <a        href="https://github.com/Probeh/CameraMap"        target="_blank"        class="btn nav-action"        routerLink=""      ><i class="fa fa-github"></i></a>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CameraEventsComponent', 'selector': 'app-camera-events'},{'name': 'CameraListComponent', 'selector': 'app-camera-list'},{'name': 'CameraMapComponent', 'selector': 'app-camera-map'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavbarComponent'};
