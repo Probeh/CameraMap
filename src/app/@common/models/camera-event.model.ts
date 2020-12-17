@@ -1,20 +1,20 @@
 import { EventType } from '@common/enums/event-type.enum'
 import { Camera } from '@common/models/camera.model'
 import { Geolocation } from '@common/models/geolocation.model'
-export class CameraEvent {
+import { ModelBase } from '@common/models/model-base.model';
+
+export class CameraEvent extends ModelBase<CameraEvent> {
   // ======================================= //
-  public id         : number     ;
   public cameraId   : number     ;
   public camera     : Camera     ;
-  public occurence  : Date       ;
-  public name       : EventType  ;
-  public description: string     ;
   public coordinates: Geolocation;
   // ======================================= //
-  constructor(camera: Camera) {
-    this.camera    = camera       ;
-    this.cameraId  = camera.id    ;
-    this.occurence = new Date  () ;
+  constructor(camera: Camera, id?: number, event?: EventType, coordinates?: Geolocation) {
+    super(event, id);
+    // ======================================= //
+    this.camera      = camera        ;
+    this.cameraId    = camera     .id;
+    this.coordinates = coordinates   ;
   }
   // ======================================= //
   public random() {

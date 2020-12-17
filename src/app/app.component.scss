@@ -2,7 +2,6 @@
 
 .content {
   height: 100vh;
-  max-height: 100vh;
   display: flex;
   flex-direction: column;
 
@@ -14,7 +13,6 @@
     display: flex;
     flex: auto;
     flex-direction: row;
-    overflow-y: auto;
   }
   .content-panel {
     width: 250px;

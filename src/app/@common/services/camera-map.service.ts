@@ -2,7 +2,7 @@ import { BehaviorSubject, Observable } from 'rxjs'
 import { tap                         } from 'rxjs/operators'
 import { HttpClient                  } from '@angular/common/http'
 import { EventEmitter   , Injectable } from '@angular/core'
-import { LogScope                    } from '@common/enums/logscope.enum'
+import { LoggerScope                 } from '@common/enums/logger-scope.enum'
 import { KeyValue                    } from '@common/helpers/key-value'
 import { MapOptions                  } from '@common/helpers/map.config'
 import { CameraEvent                 } from '@common/models/camera-event.model'
@@ -26,14 +26,13 @@ export class CameraMapService {
     this.setEventListener();
   }
   // ======================================= //
+
   private async getCameras(): Promise<Camera[]> {
     return await this.http
       .get<Camera[]>('cameras')
       .pipe(tap(result => this._cameraList = result))
       .pipe(tap(result => this.cameraList$.next(result)))
-      .pipe(tap(result => {
-        this.logger.log(LogScope.Cameras, result)
-      }))
+      .pipe(tap(result => this.logger.log(LoggerScope.Cameras, result)))
       .toPromise()
   }
   private setEventListener() {
@@ -45,7 +44,7 @@ export class CameraMapService {
             this._eventsList?.value?.push(new CameraEvent(this._eventsList?.key));
             emitter.next(this._eventsList.value.slice());
           }
-        }, 5000);
+        }, 500);
         this._camRefresh
           .subscribe(() => emitter.next(this._eventsList.value.slice()));
       });

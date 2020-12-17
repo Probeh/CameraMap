@@ -22,6 +22,10 @@ body {
     justify-content: space-between;
     height: 50px;
   }
+  .card-body {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
 }
 .action-btn {
   border-color: $theme;
