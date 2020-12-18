@@ -174,7 +174,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#selection">selection</a>
+                                <a href="#currentCamera">currentCamera</a>
                             </li>
                         </ul>
                     </td>
@@ -189,7 +189,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#selectionChange">selectionChange</a>
+                                <a href="#currentCameraChange">currentCameraChange</a>
                             </li>
                         </ul>
                     </td>
@@ -268,8 +268,8 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="selection"></a>
-                        <b>selection</b>
+                        <a name="currentCamera"></a>
+                        <b>currentCamera</b>
                     </td>
                 </tr>
                 <tr>
@@ -292,8 +292,8 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="selectionChange"></a>
-                        <b>selectionChange</b>
+                        <a name="currentCameraChange"></a>
+                        <b>currentCameraChange</b>
                     </td>
                 </tr>
                 <tr>
@@ -449,7 +449,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onSelection(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>onSelection(camera: <a href="../classes/Camera.html">Camera</a>)</code>
                 </td>
             </tr>
 
@@ -477,9 +477,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>camera</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="../classes/Camera.html" target="_self" >Camera</a></code>
                                     </td>
 
                                     <td>
@@ -586,8 +586,8 @@ import { FormGroup } from &#x27;@angular/forms&#x27;
 })
 export class CameraListComponent implements OnInit {
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  @Input() public selection: Camera;
-  @Output() public selectionChange: EventEmitter&lt;Camera&gt; &#x3D; new EventEmitter();
+  @Input() public currentCamera: Camera;
+  @Output() public currentCameraChange: EventEmitter&lt;Camera&gt; &#x3D; new EventEmitter();
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
   public cameraList$: Observable&lt;Camera[]&gt;;
   public cameraForm: FormGroup;
@@ -598,9 +598,9 @@ export class CameraListComponent implements OnInit {
     this.cameraForm &#x3D; this.formService.createForm();
   }
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  public onSelection(id: number) {
-    this.selection &#x3D; this.mapService.getCameraById(id);
-    this.selectionChange.emit(this.selection);
+  public onSelection(camera: Camera) {
+    this.currentCamera &#x3D; camera;
+    this.currentCameraChange.emit(this.currentCamera);
   }
   public addCamera(camera: Camera &#x3D; this.cameraForm.value) {
     console.log(camera)
@@ -629,7 +629,7 @@ export class CameraListComponent implements OnInit {
         *ngFor&#x3D;&quot;let camera of this.cameraList$ | async; index as i&quot;
         type&#x3D;&quot;button&quot;
         class&#x3D;&quot;btn list-group-item list-group-item-action&quot;
-        (click)&#x3D;&quot;this.onSelection(camera.id)&quot;
+        (click)&#x3D;&quot;this.onSelection(camera)&quot;
       &gt;
         &lt;i class&#x3D;&quot;fa fa-video-camera&quot;&gt;&lt;/i&gt;
         #{{i+1 | number: &#x27;2.0&#x27;}} {{camera.name | titlecase}}&lt;/button&gt;
@@ -640,6 +640,7 @@ export class CameraListComponent implements OnInit {
 &lt;app-camera-form
   (onSubmit)&#x3D;&quot;this.addCamera()&quot;
   [formGroup]&#x3D;&quot;this.cameraForm&quot;
+  [formIcon]&#x3D;&quot;&#x27;video-camera&#x27;&quot;
   [formTitle]&#x3D;&quot;&#x27;New Camera Item&#x27;&quot;
 &gt;
   &lt;div class&#x3D;&quot;card&quot;&gt;
@@ -786,7 +787,7 @@ export class CameraListComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">Available Cameras</div>    <button      type="button"      data-target="#camera-form"      data-toggle="modal"      class="btn btn-sm btn-outline-info"    >      <i class="fa fa-plus"></i> Add</button>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let camera of this.cameraList$ | async; index as i"        type="button"        class="btn list-group-item list-group-item-action"        (click)="this.onSelection(camera.id)"      >        <i class="fa fa-video-camera"></i>        #{{i+1 | number: \'2.0\'}} {{camera.name | titlecase}}</button>    </div>  </div></div><app-camera-form  (onSubmit)="this.addCamera()"  [formGroup]="this.cameraForm"  [formTitle]="\'New Camera Item\'">  <div class="card">    <div class="card-header p-1 bg-warning"></div>    <div class="card-body">      <p        class="text-secondary"        style="font-size: 18px"      >Details</p>      <div class="row">        <div class="col">          <div class="form-group">            <label for="name">*Name:</label>            <input              class="form-control form-control-sm"              formControlName="name"              id="name"              name="name"              placeholder="Camera name:"              type="text"            >            <div              *ngIf="this.cameraForm.get(\'name\').touched && this.cameraForm.get(\'name\').invalid"              class="alert alert-danger"              role="alert"              style="font-size: smaller;"            >              <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required            </div>          </div>        </div>      </div>      <div class="row">        <div class="col">          <div class="form-group">            <label for="description">Description:</label>            <span class="ml-2 text-muted">(optional)</span>            <textarea              class="form-control form-control-sm"              formControlName="description"              id="description"              name="description"              placeholder="Optional description:"              type="text"            ></textarea>          </div>        </div>      </div>    </div>  </div>  <hr>  <div class="card">    <div class="card-header p-1 bg-info"></div>    <div      class="card-body"      [formGroup]="this.cameraForm.controls[\'coordinates\']"    >      <p        class="text-secondary"        style="font-size: 18px"      >Geolocation</p>      <div class="row">        <div class="col">          <div class="form-group">            <label for="lat">*Lat:</label>            <input              class="form-control form-control-sm"              formControlName="lat"              id="lat"              name="lat"              placeholder="Latitude (X):"              type="number"            >            <div              *ngIf="this.cameraForm.get(\'coordinates\').get(\'lat\').touched && this.cameraForm.get(\'coordinates\').get(\'lat\').invalid"              class="alert alert-danger"              role="alert"              style="font-size: smaller;"            >              <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required            </div>          </div>        </div>        <div class="col">          <div class="form-group">            <label for="lng">*Lng:</label>            <input              class="form-control form-control-sm"              formControlName="lng"              id="lng"              name="lng"              placeholder="Longitude (Y):"              type="number"            >            <div              *ngIf="this.cameraForm.get(\'coordinates\').get(\'lng\').touched && this.cameraForm.get(\'coordinates\').get(\'lng\').invalid"              class="alert alert-danger"              role="alert"              style="font-size: smaller;"            >              <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required            </div>          </div>        </div>      </div>    </div>  </div></app-camera-form></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">Available Cameras</div>    <button      type="button"      data-target="#camera-form"      data-toggle="modal"      class="btn btn-sm btn-outline-info"    >      <i class="fa fa-plus"></i> Add</button>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let camera of this.cameraList$ | async; index as i"        type="button"        class="btn list-group-item list-group-item-action"        (click)="this.onSelection(camera)"      >        <i class="fa fa-video-camera"></i>        #{{i+1 | number: \'2.0\'}} {{camera.name | titlecase}}</button>    </div>  </div></div><app-camera-form  (onSubmit)="this.addCamera()"  [formGroup]="this.cameraForm"  [formIcon]="\'video-camera\'"  [formTitle]="\'New Camera Item\'">  <div class="card">    <div class="card-header p-1 bg-warning"></div>    <div class="card-body">      <p        class="text-secondary"        style="font-size: 18px"      >Details</p>      <div class="row">        <div class="col">          <div class="form-group">            <label for="name">*Name:</label>            <input              class="form-control form-control-sm"              formControlName="name"              id="name"              name="name"              placeholder="Camera name:"              type="text"            >            <div              *ngIf="this.cameraForm.get(\'name\').touched && this.cameraForm.get(\'name\').invalid"              class="alert alert-danger"              role="alert"              style="font-size: smaller;"            >              <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required            </div>          </div>        </div>      </div>      <div class="row">        <div class="col">          <div class="form-group">            <label for="description">Description:</label>            <span class="ml-2 text-muted">(optional)</span>            <textarea              class="form-control form-control-sm"              formControlName="description"              id="description"              name="description"              placeholder="Optional description:"              type="text"            ></textarea>          </div>        </div>      </div>    </div>  </div>  <hr>  <div class="card">    <div class="card-header p-1 bg-info"></div>    <div      class="card-body"      [formGroup]="this.cameraForm.controls[\'coordinates\']"    >      <p        class="text-secondary"        style="font-size: 18px"      >Geolocation</p>      <div class="row">        <div class="col">          <div class="form-group">            <label for="lat">*Lat:</label>            <input              class="form-control form-control-sm"              formControlName="lat"              id="lat"              name="lat"              placeholder="Latitude (X):"              type="number"            >            <div              *ngIf="this.cameraForm.get(\'coordinates\').get(\'lat\').touched && this.cameraForm.get(\'coordinates\').get(\'lat\').invalid"              class="alert alert-danger"              role="alert"              style="font-size: smaller;"            >              <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required            </div>          </div>        </div>        <div class="col">          <div class="form-group">            <label for="lng">*Lng:</label>            <input              class="form-control form-control-sm"              formControlName="lng"              id="lng"              name="lng"              placeholder="Longitude (Y):"              type="number"            >            <div              *ngIf="this.cameraForm.get(\'coordinates\').get(\'lng\').touched && this.cameraForm.get(\'coordinates\').get(\'lng\').invalid"              class="alert alert-danger"              role="alert"              style="font-size: smaller;"            >              <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required            </div>          </div>        </div>      </div>    </div>  </div></app-camera-form></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CameraEventsComponent', 'selector': 'app-camera-events'},{'name': 'CameraFormComponent', 'selector': 'app-camera-form'},{'name': 'CameraListComponent', 'selector': 'app-camera-list'},{'name': 'CameraMapComponent', 'selector': 'app-camera-map'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CameraListComponent'};

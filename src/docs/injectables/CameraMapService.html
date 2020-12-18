@@ -113,20 +113,12 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getCameraById">getCameraById</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#getCameraEvents">getCameraEvents</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Async</span>
                                 <a href="#getCameras">getCameras</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#getEventById">getEventById</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -307,78 +299,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getCameraById"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            getCameraById
-                        </b>
-                        <a href="#getCameraById"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getCameraById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/@common/services/camera-map.service.ts:75</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Camera.html" target="_self" >Camera</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="getCameraEvents"></a>
                     <span class="name">
                         <b>
@@ -484,78 +404,6 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../classes/Camera.html" target="_self" >Promise&lt;Camera[]&gt;</a></code>
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getEventById"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            getEventById
-                        </b>
-                        <a href="#getEventById"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getEventById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">src/app/@common/services/camera-map.service.ts:70</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/CameraEvent.html" target="_self" >CameraEvent</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -925,17 +773,17 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;
-import { tap } from &#x27;rxjs/operators&#x27;
-import { HttpClient } from &#x27;@angular/common/http&#x27;
-import { EventEmitter, Injectable } from &#x27;@angular/core&#x27;
-import { LoggerScope } from &#x27;@common/enums/logger-scope.enum&#x27;
-import { KeyValue } from &#x27;@common/helpers/key-value&#x27;
-import { MapOptions } from &#x27;@common/helpers/map.config&#x27;
-import { CameraEvent } from &#x27;@common/models/camera-event.model&#x27;
-import { Camera } from &#x27;@common/models/camera.model&#x27;
-import { LoggerService } from &#x27;@common/services/logger.service&#x27;
-import { environment } from &#x27;@env/environment.prod&#x27;
-import { Loader } from &#x27;@googlemaps/js-api-loader&#x27;
+import { tap                         } from &#x27;rxjs/operators&#x27;
+import { HttpClient                  } from &#x27;@angular/common/http&#x27;
+import { EventEmitter   , Injectable } from &#x27;@angular/core&#x27;
+import { LoggerScope                 } from &#x27;@common/enums/logger-scope.enum&#x27;
+import { KeyValue                    } from &#x27;@common/helpers/key-value&#x27;
+import { MapOptions                  } from &#x27;@common/helpers/map.config&#x27;
+import { CameraEvent                 } from &#x27;@common/models/camera-event.model&#x27;
+import { Camera                      } from &#x27;@common/models/camera.model&#x27;
+import { LoggerService               } from &#x27;@common/services/logger.service&#x27;
+import { environment                 } from &#x27;@env/environment.prod&#x27;
+import { Loader                      } from &#x27;@googlemaps/js-api-loader&#x27;
 
 @Injectable()
 export class CameraMapService {
@@ -992,16 +840,6 @@ export class CameraMapService {
   public refreshEvents(camera: Camera) {
     this._eventsList &#x3D; { key: camera, value: new Array&lt;CameraEvent&gt;() };
     this._camRefresh.next();
-  }
-  public getEventById(id: number): CameraEvent {
-    return this._eventsList.value
-      .slice()
-      .find(x &#x3D;&gt; x.id &#x3D;&#x3D; id);
-  }
-  public getCameraById(id: number): Camera {
-    return this._cameraList
-      .slice()
-      .find(x &#x3D;&gt; x.id &#x3D;&#x3D; id);
   }
 }
 export type GoogleMap &#x3D; google.maps.Map;

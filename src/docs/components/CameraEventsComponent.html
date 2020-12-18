@@ -136,6 +136,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#cameraEvent">cameraEvent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#cameraEvents$">cameraEvents$</a>
                             </li>
                         </ul>
@@ -155,11 +159,15 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#onSelection">onSelection</a>
+                                <a href="#onCameraChanged">onCameraChanged</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#refreshList">refreshList</a>
+                                <a href="#onEventChanged">onEventChanged</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#refreshEventList">refreshEventList</a>
                             </li>
                         </ul>
                     </td>
@@ -174,12 +182,29 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#selection">selection</a>
+                                <a href="#currentCamera">currentCamera</a>
+                            </li>
+                            <li>
+                                <a href="#currentEvent">currentEvent</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#currentEventChange">currentEventChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -192,7 +217,10 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#selection">selection</a>
+                                    <a href="#currentCamera">currentCamera</a>
+                                </li>
+                                <li>
+                                    <a href="#currentEvent">currentEvent</a>
                                 </li>
                             </ul>
                         </td>
@@ -212,7 +240,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -256,8 +284,8 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="selection"></a>
-                        <b>selection</b>
+                        <a name="currentCamera"></a>
+                        <b>currentCamera</b>
                     </td>
                 </tr>
                         <tr>
@@ -267,8 +295,46 @@
                         </tr>
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentEvent"></a>
+                        <b>currentEvent</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:15</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
 </section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentEventChange"></a>
+                        <b>currentEventChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;CameraEvent&gt;</code>
 
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:16</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
     <section>
@@ -298,8 +364,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -319,28 +385,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onSelection"></a>
+                    <a name="onCameraChanged"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            onSelection
+                            onCameraChanged
                         </b>
-                        <a href="#onSelection"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onCameraChanged"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onSelection(camera: <a href="../classes/Camera.html">Camera</a>)</code>
+                    <code>onCameraChanged(camera: <a href="../classes/Camera.html">Camera</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:28</a></div>
                 </td>
             </tr>
 
@@ -391,28 +457,100 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="refreshList"></a>
+                    <a name="onEventChanged"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            refreshList
+                            onEventChanged
                         </b>
-                        <a href="#refreshList"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onEventChanged"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>refreshList()</code>
+                    <code>onEventChanged(event: <a href="../classes/CameraEvent.html">CameraEvent</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="../classes/CameraEvent.html" target="_self" >CameraEvent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refreshEventList"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            refreshEventList
+                        </b>
+                        <a href="#refreshEventList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>refreshEventList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -455,7 +593,35 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cameraEvent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            cameraEvent</b>
+                            <a href="#cameraEvent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/CameraEvent.html" target="_self" >CameraEvent</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -483,7 +649,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -500,15 +666,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="selection"></a>
-                        <span class="name"><b>selection</b><a href="#selection"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="currentCamera"></a>
+                        <span class="name"><b>currentCamera</b><a href="#currentCamera"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
 
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>set</b><code>selection(value)</code></span>
+                        <span class="accessor"><b>set</b><code>currentCamera(camera)</code></span>
                     </td>
                 </tr>
                             <tr>
@@ -530,7 +696,62 @@
                                             </thead>
                                             <tbody>
                                                     <tr>
-                                                            <td>value</td>
+                                                            <td>camera</td>
+                                                    
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentEvent"></a>
+                        <span class="name"><b>currentEvent</b><a href="#currentEvent"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>currentEvent(event)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:15</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>event</td>
                                                     
                                                     
                                                         <td>
@@ -556,11 +777,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Observable               } from &#x27;rxjs&#x27;
-import { Component, Input, OnInit } from &#x27;@angular/core&#x27;
-import { CameraEvent              } from &#x27;@common/models/camera-event.model&#x27;
-import { Camera                   } from &#x27;@common/models/camera.model&#x27;
-import { CameraMapService         } from &#x27;@common/services/camera-map.service&#x27;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Observable } from &#x27;rxjs&#x27;
+import { Component, EventEmitter, Input, OnInit, Output } from &#x27;@angular/core&#x27;
+import { CameraEvent } from &#x27;@common/models/camera-event.model&#x27;
+import { Camera } from &#x27;@common/models/camera.model&#x27;
+import { CameraMapService } from &#x27;@common/services/camera-map.service&#x27;
 
 @Component({
   selector: &#x27;app-camera-events&#x27;,
@@ -569,20 +790,27 @@ import { CameraMapService         } from &#x27;@common/services/camera-map.servi
 })
 export class CameraEventsComponent implements OnInit {
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  @Input() public set selection(value: Camera) { this.onSelection(value); }
+  @Input() public set currentCamera(camera: Camera) { this.onCameraChanged(camera); }
+  @Input() public set currentEvent(event: CameraEvent) { this.onEventChanged(event); }
+  @Output() public currentEventChange: EventEmitter&lt;CameraEvent&gt; &#x3D; new EventEmitter();
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
   public camera: Camera;
+  public cameraEvent: CameraEvent;
   public cameraEvents$: Observable&lt;CameraEvent[]&gt;;
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
   constructor(private mapService: CameraMapService) { }
   ngOnInit() { this.cameraEvents$ &#x3D; this.mapService.eventsList$; }
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  public refreshList() {
+  public refreshEventList() {
     this.mapService.refreshEvents(this.camera);
   }
-  public onSelection(camera: Camera) {
+  public onCameraChanged(camera: Camera) {
     this.camera &#x3D; camera;
     this.mapService.getCameraEvents(camera);
+  }
+  public onEventChanged(event: CameraEvent) {
+    this.cameraEvent &#x3D; event;
+    this.currentEventChange.emit(event);
   }
 }
 </code></pre>
@@ -596,7 +824,7 @@ export class CameraEventsComponent implements OnInit {
     &lt;/div&gt;
     &lt;button
       class&#x3D;&quot;btn btn-sm btn-outline-info&quot;
-      (click)&#x3D;&quot;this.refreshList()&quot;
+      (click)&#x3D;&quot;this.refreshEventList()&quot;
     &gt;&lt;i class&#x3D;&quot;fa fa-refresh&quot;&gt;&lt;/i&gt; Refresh&lt;/button&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;content-card-body&quot;&gt;
@@ -649,7 +877,7 @@ export class CameraEventsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">      Active Events    </div>    <button      class="btn btn-sm btn-outline-info"      (click)="this.refreshList()"    ><i class="fa fa-refresh"></i> Refresh</button>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let event of this.cameraEvents$ | async; let index = index"        type="button"        class="btn list-group-item list-group-item-action"      ><i class="fa fa-flag"></i>        <span>          <strong>{{event.name}}</strong>          <hr>          {{camera.name}} Activity #{{event.id | number: \'2.0\'}}        </span>      </button>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">      Active Events    </div>    <button      class="btn btn-sm btn-outline-info"      (click)="this.refreshEventList()"    ><i class="fa fa-refresh"></i> Refresh</button>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let event of this.cameraEvents$ | async; let index = index"        type="button"        class="btn list-group-item list-group-item-action"      ><i class="fa fa-flag"></i>        <span>          <strong>{{event.name}}</strong>          <hr>          {{camera.name}} Activity #{{event.id | number: \'2.0\'}}        </span>      </button>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CameraEventsComponent', 'selector': 'app-camera-events'},{'name': 'CameraFormComponent', 'selector': 'app-camera-form'},{'name': 'CameraListComponent', 'selector': 'app-camera-list'},{'name': 'CameraMapComponent', 'selector': 'app-camera-map'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CameraEventsComponent'};

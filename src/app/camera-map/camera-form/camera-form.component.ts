@@ -10,6 +10,7 @@ import { Camera } from '@common/models/camera.model'
 export class CameraFormComponent implements OnInit {
   @ViewChild('modalRef') public modal: ElementRef;
   @Output() public onSubmit: EventEmitter<Camera> = new EventEmitter();
+  // ======================================= //
   @Input() formGroup: FormGroup;
   @Input() formTitle: string;
   @Input() formIcon: string;
