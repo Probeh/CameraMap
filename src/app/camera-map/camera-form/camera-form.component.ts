@@ -1,4 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core'
+import { FormGroup } from '@angular/forms'
+import { Camera } from '@common/models/camera.model'
 
 @Component({
   selector: 'app-camera-form',
@@ -7,25 +9,22 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild }
 })
 export class CameraFormComponent implements OnInit {
   @ViewChild('modalRef') public modal: ElementRef;
-  // ======================================= //
-  @Output() public onSubmit: EventEmitter<any> = new EventEmitter();
-  @Output() public onCancel: EventEmitter<any> = new EventEmitter();
-  // ======================================= //
-  @Input() public title: string;
-  @Input() public icon: string;
-  @Input() public isvalid: boolean;
+  @Output() public onSubmit: EventEmitter<Camera> = new EventEmitter();
+  @Input() formGroup: FormGroup;
+  @Input() formTitle: string;
   // ======================================= //
   constructor() { }
   ngOnInit() { }
   // ======================================= //
-  public saveForm() {
-    this.modal.nativeElement.click();
+  public submitForm() {
     this.onSubmit.next();
+    this.formGroup?.reset();
+    this.modal.nativeElement.click();
   }
   public cancelForm() {
     if (confirm('Are you sure?')) {
       this.modal.nativeElement.click();
-      this.onCancel.next();
+      this.formGroup?.reset();
     }
   }
 }

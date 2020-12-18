@@ -686,7 +686,7 @@ export class CameraListComponent implements OnInit {
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
   public submitCamera() {
     this.mapService.addCamera(this.cameraForm.value);
-    this.resetCamera()
+    this.resetCamera();
   }
   public resetCamera() {
     this.cameraForm &#x3D; this.formService.createForm();
@@ -706,6 +706,14 @@ export class CameraListComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content-card-primary&quot;&gt;
   &lt;div class&#x3D;&quot;content-card-header&quot;&gt;
     &lt;div class&#x3D;&quot;title&quot;&gt;Available Cameras&lt;/div&gt;
+    &lt;button
+      type&#x3D;&quot;button&quot;
+      data-target&#x3D;&quot;#camera-form&quot;
+      data-toggle&#x3D;&quot;modal&quot;
+      class&#x3D;&quot;btn btn-sm btn-outline-info&quot;
+    &gt;
+      &lt;i class&#x3D;&quot;fa fa-plus&quot;&gt;&lt;/i&gt; Add&lt;/button&gt;
+
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;content-card-body&quot;&gt;
     &lt;div class&#x3D;&quot;list-group&quot;&gt;
@@ -716,24 +724,14 @@ export class CameraListComponent implements OnInit {
         (click)&#x3D;&quot;this.onSelection(camera.id)&quot;
       &gt;
         &lt;i class&#x3D;&quot;fa fa-video-camera&quot;&gt;&lt;/i&gt;
-        #{{i+1 | number: &#x27;2.0&#x27;}} {{camera.name}}&lt;/button&gt;
+        #{{i+1 | number: &#x27;2.0&#x27;}} {{camera.name | titlecase}}&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class&#x3D;&quot;content-card-footer&quot;&gt;
-  &lt;button
-    type&#x3D;&quot;button&quot;
-    data-target&#x3D;&quot;#camera-form&quot;
-    data-toggle&#x3D;&quot;modal&quot;
-    class&#x3D;&quot;btn btn-block btn-outline-info&quot;
-  &gt;
-    &lt;i class&#x3D;&quot;fa fa-plus&quot;&gt;&lt;/i&gt; Add Camera&lt;/button&gt;
-&lt;/div&gt;
 
 &lt;app-camera-form
-  (onSubmit)&#x3D;&quot;this.submitCamera()&quot;
   (onCancel)&#x3D;&quot;this.resetCamera()&quot;
-  [changed]&#x3D;&quot;!this.cameraForm?.pristine&quot;
+  (onSubmit)&#x3D;&quot;this.submitCamera()&quot;
   [icon]&#x3D;&quot;&#x27;fa fa-video-camera&#x27;&quot;
   [isvalid]&#x3D;&quot;this.cameraForm?.valid&quot;
   [title]&#x3D;&quot;&#x27;New Camera Item&#x27;&quot;
@@ -885,7 +883,7 @@ export class CameraListComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">Available Cameras</div>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let camera of this.cameraList$ | async; index as i"        type="button"        class="btn list-group-item list-group-item-action"        (click)="this.onSelection(camera.id)"      >        <i class="fa fa-video-camera"></i>        #{{i+1 | number: \'2.0\'}} {{camera.name}}</button>    </div>  </div></div><div class="content-card-footer">  <button    type="button"    data-target="#camera-form"    data-toggle="modal"    class="btn btn-block btn-outline-info"  >    <i class="fa fa-plus"></i> Add Camera</button></div><app-camera-form  (onSubmit)="this.submitCamera()"  (onCancel)="this.resetCamera()"  [changed]="!this.cameraForm?.pristine"  [icon]="\'fa fa-video-camera\'"  [isvalid]="this.cameraForm?.valid"  [title]="\'New Camera Item\'">  <form [formGroup]="this.cameraForm">    <div class="card">      <div class="card-header p-1 bg-warning"></div>      <div class="card-body">        <p          class="text-secondary"          style="font-size: 18px"        >Details</p>        <div class="row">          <div class="col">            <div class="form-group">              <label for="name">*Name:</label>              <input                class="form-control form-control-sm"                formControlName="name"                id="name"                name="name"                placeholder="Camera name:"                type="text"              >              <div                *ngIf="this.validInput(this.cameraForm.get(\'name\'))"                class="alert alert-danger"                role="alert"                style="font-size: smaller;"              >                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required              </div>            </div>          </div>        </div>        <div class="row">          <div class="col">            <div class="form-group">              <label for="description">Description:</label>              <span class="ml-2 text-muted">(optional)</span>              <textarea                class="form-control form-control-sm"                formControlName="description"                id="description"                name="description"                placeholder="Optional description:"                type="text"              ></textarea>            </div>          </div>        </div>      </div>    </div>    <hr>    <div class="card">      <div class="card-header p-1 bg-info"></div>      <div        class="card-body"        [formGroup]="this.cameraForm.controls[\'coordinates\']"      >        <p          class="text-secondary"          style="font-size: 18px"        >Geolocation</p>        <div class="row">          <div class="col">            <div class="form-group">              <label for="lat">*Lat:</label>              <input                class="form-control form-control-sm"                formControlName="lat"                id="lat"                name="lat"                placeholder="Latitude (X):"                type="number"              >              <div                *ngIf="this.validInput(this.cameraForm.get(\'coordinates\').get(\'lat\'))"                class="alert alert-danger"                role="alert"                style="font-size: smaller;"              >                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required              </div>            </div>          </div>          <div class="col">            <div class="form-group">              <label for="lng">*Lng:</label>              <input                class="form-control form-control-sm"                formControlName="lng"                id="lng"                name="lng"                placeholder="Longitude (Y):"                type="number"              >              <div                *ngIf="this.validInput(this.cameraForm.get(\'coordinates\').get(\'lng\'))"                class="alert alert-danger"                role="alert"                style="font-size: smaller;"              >                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required              </div>            </div>          </div>        </div>      </div>    </div>  </form></app-camera-form></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">Available Cameras</div>    <button      type="button"      data-target="#camera-form"      data-toggle="modal"      class="btn btn-sm btn-outline-info"    >      <i class="fa fa-plus"></i> Add</button>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let camera of this.cameraList$ | async; index as i"        type="button"        class="btn list-group-item list-group-item-action"        (click)="this.onSelection(camera.id)"      >        <i class="fa fa-video-camera"></i>        #{{i+1 | number: \'2.0\'}} {{camera.name | titlecase}}</button>    </div>  </div></div><app-camera-form  (onCancel)="this.resetCamera()"  (onSubmit)="this.submitCamera()"  [icon]="\'fa fa-video-camera\'"  [isvalid]="this.cameraForm?.valid"  [title]="\'New Camera Item\'">  <form [formGroup]="this.cameraForm">    <div class="card">      <div class="card-header p-1 bg-warning"></div>      <div class="card-body">        <p          class="text-secondary"          style="font-size: 18px"        >Details</p>        <div class="row">          <div class="col">            <div class="form-group">              <label for="name">*Name:</label>              <input                class="form-control form-control-sm"                formControlName="name"                id="name"                name="name"                placeholder="Camera name:"                type="text"              >              <div                *ngIf="this.validInput(this.cameraForm.get(\'name\'))"                class="alert alert-danger"                role="alert"                style="font-size: smaller;"              >                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required              </div>            </div>          </div>        </div>        <div class="row">          <div class="col">            <div class="form-group">              <label for="description">Description:</label>              <span class="ml-2 text-muted">(optional)</span>              <textarea                class="form-control form-control-sm"                formControlName="description"                id="description"                name="description"                placeholder="Optional description:"                type="text"              ></textarea>            </div>          </div>        </div>      </div>    </div>    <hr>    <div class="card">      <div class="card-header p-1 bg-info"></div>      <div        class="card-body"        [formGroup]="this.cameraForm.controls[\'coordinates\']"      >        <p          class="text-secondary"          style="font-size: 18px"        >Geolocation</p>        <div class="row">          <div class="col">            <div class="form-group">              <label for="lat">*Lat:</label>              <input                class="form-control form-control-sm"                formControlName="lat"                id="lat"                name="lat"                placeholder="Latitude (X):"                type="number"              >              <div                *ngIf="this.validInput(this.cameraForm.get(\'coordinates\').get(\'lat\'))"                class="alert alert-danger"                role="alert"                style="font-size: smaller;"              >                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required              </div>            </div>          </div>          <div class="col">            <div class="form-group">              <label for="lng">*Lng:</label>              <input                class="form-control form-control-sm"                formControlName="lng"                id="lng"                name="lng"                placeholder="Longitude (Y):"                type="number"              >              <div                *ngIf="this.validInput(this.cameraForm.get(\'coordinates\').get(\'lng\'))"                class="alert alert-danger"                role="alert"                style="font-size: smaller;"              >                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required              </div>            </div>          </div>        </div>      </div>    </div>  </form></app-camera-form></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CameraEventsComponent', 'selector': 'app-camera-events'},{'name': 'CameraFormComponent', 'selector': 'app-camera-form'},{'name': 'CameraListComponent', 'selector': 'app-camera-list'},{'name': 'CameraMapComponent', 'selector': 'app-camera-map'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CameraListComponent'};

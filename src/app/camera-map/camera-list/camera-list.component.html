@@ -25,118 +25,113 @@
 </div>
 
 <app-camera-form
-  (onCancel)="this.resetCamera()"
-  (onSubmit)="this.submitCamera()"
-  [icon]="'fa fa-video-camera'"
-  [isvalid]="this.cameraForm?.valid"
-  [title]="'New Camera Item'"
+  (onSubmit)="this.addCamera()"
+  [formGroup]="this.cameraForm"
+  [formTitle]="'New Camera Item'"
 >
-  <form [formGroup]="this.cameraForm">
-    <div class="card">
-      <div class="card-header p-1 bg-warning"></div>
-      <div class="card-body">
-        <p
-          class="text-secondary"
-          style="font-size: 18px"
-        >Details</p>
-        <div class="row">
-          <div class="col">
-            <div class="form-group">
-              <label for="name">*Name:</label>
-              <input
-                class="form-control form-control-sm"
-                formControlName="name"
-                id="name"
-                name="name"
-                placeholder="Camera name:"
-                type="text"
-              >
-              <div
-                *ngIf="this.validInput(this.cameraForm.get('name'))"
-                class="alert alert-danger"
-                role="alert"
-                style="font-size: smaller;"
-              >
-                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required
-              </div>
+  <div class="card">
+    <div class="card-header p-1 bg-warning"></div>
+    <div class="card-body">
+      <p
+        class="text-secondary"
+        style="font-size: 18px"
+      >Details</p>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="name">*Name:</label>
+            <input
+              class="form-control form-control-sm"
+              formControlName="name"
+              id="name"
+              name="name"
+              placeholder="Camera name:"
+              type="text"
+            >
+            <div
+              *ngIf="this.cameraForm.get('name').touched && this.cameraForm.get('name').invalid"
+              class="alert alert-danger"
+              role="alert"
+              style="font-size: smaller;"
+            >
+              <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <div class="form-group">
-              <label for="description">Description:</label>
-              <span class="ml-2 text-muted">(optional)</span>
-              <textarea
-                class="form-control form-control-sm"
-                formControlName="description"
-                id="description"
-                name="description"
-                placeholder="Optional description:"
-                type="text"
-              ></textarea>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <span class="ml-2 text-muted">(optional)</span>
+            <textarea
+              class="form-control form-control-sm"
+              formControlName="description"
+              id="description"
+              name="description"
+              placeholder="Optional description:"
+              type="text"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="card">
+    <div class="card-header p-1 bg-info"></div>
+    <div
+      class="card-body"
+      [formGroup]="this.cameraForm.controls['coordinates']"
+    >
+      <p
+        class="text-secondary"
+        style="font-size: 18px"
+      >Geolocation</p>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="lat">*Lat:</label>
+            <input
+              class="form-control form-control-sm"
+              formControlName="lat"
+              id="lat"
+              name="lat"
+              placeholder="Latitude (X):"
+              type="number"
+            >
+            <div
+              *ngIf="this.cameraForm.get('coordinates').get('lat').touched && this.cameraForm.get('coordinates').get('lat').invalid"
+              class="alert alert-danger"
+              role="alert"
+              style="font-size: smaller;"
+            >
+              <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="lng">*Lng:</label>
+            <input
+              class="form-control form-control-sm"
+              formControlName="lng"
+              id="lng"
+              name="lng"
+              placeholder="Longitude (Y):"
+              type="number"
+            >
+            <div
+              *ngIf="this.cameraForm.get('coordinates').get('lng').touched && this.cameraForm.get('coordinates').get('lng').invalid"
+              class="alert alert-danger"
+              role="alert"
+              style="font-size: smaller;"
+            >
+              <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required
             </div>
           </div>
         </div>
       </div>
     </div>
-    <hr>
-    <div class="card">
-      <div class="card-header p-1 bg-info"></div>
-      <div
-        class="card-body"
-        [formGroup]="this.cameraForm.controls['coordinates']"
-      >
-        <p
-          class="text-secondary"
-          style="font-size: 18px"
-        >Geolocation</p>
-        <div class="row">
-          <div class="col">
-            <div class="form-group">
-              <label for="lat">*Lat:</label>
-              <input
-                class="form-control form-control-sm"
-                formControlName="lat"
-                id="lat"
-                name="lat"
-                placeholder="Latitude (X):"
-                type="number"
-              >
-              <div
-                *ngIf="this.validInput(this.cameraForm.get('coordinates').get('lat'))"
-                class="alert alert-danger"
-                role="alert"
-                style="font-size: smaller;"
-              >
-                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-group">
-              <label for="lng">*Lng:</label>
-              <input
-                class="form-control form-control-sm"
-                formControlName="lng"
-                id="lng"
-                name="lng"
-                placeholder="Longitude (Y):"
-                type="number"
-              >
-              <div
-                *ngIf="this.validInput(this.cameraForm.get('coordinates').get('lng'))"
-                class="alert alert-danger"
-                role="alert"
-                style="font-size: smaller;"
-              >
-                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </form>
+  </div>
 </app-camera-form>

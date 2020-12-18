@@ -591,7 +591,13 @@ export class CameraEventsComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content-card-primary&quot;&gt;
   &lt;div class&#x3D;&quot;content-card-header&quot;&gt;
-    &lt;div class&#x3D;&quot;title&quot;&gt;Active Events&lt;/div&gt;
+    &lt;div class&#x3D;&quot;title&quot;&gt;
+      Active Events
+    &lt;/div&gt;
+    &lt;button
+      class&#x3D;&quot;btn btn-sm btn-outline-info&quot;
+      (click)&#x3D;&quot;this.refreshList()&quot;
+    &gt;&lt;i class&#x3D;&quot;fa fa-refresh&quot;&gt;&lt;/i&gt; Refresh&lt;/button&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;content-card-body&quot;&gt;
     &lt;div class&#x3D;&quot;list-group&quot;&gt;
@@ -608,12 +614,6 @@ export class CameraEventsComponent implements OnInit {
       &lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class&#x3D;&quot;content-card-footer&quot;&gt;
-  &lt;button
-    class&#x3D;&quot;btn btn-block btn-outline-info&quot;
-    (click)&#x3D;&quot;this.refreshList()&quot;
-  &gt;&lt;i class&#x3D;&quot;fa fa-refresh&quot;&gt;&lt;/i&gt; Refresh&lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -649,7 +649,7 @@ export class CameraEventsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">Active Events</div>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let event of this.cameraEvents$ | async; let index = index"        type="button"        class="btn list-group-item list-group-item-action"      ><i class="fa fa-flag"></i>        <span>          <strong>{{event.name}}</strong>          <hr>          {{camera.name}} Activity #{{event.id | number: \'2.0\'}}        </span>      </button>    </div>  </div></div><div class="content-card-footer">  <button    class="btn btn-block btn-outline-info"    (click)="this.refreshList()"  ><i class="fa fa-refresh"></i> Refresh</button></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">      Active Events    </div>    <button      class="btn btn-sm btn-outline-info"      (click)="this.refreshList()"    ><i class="fa fa-refresh"></i> Refresh</button>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let event of this.cameraEvents$ | async; let index = index"        type="button"        class="btn list-group-item list-group-item-action"      ><i class="fa fa-flag"></i>        <span>          <strong>{{event.name}}</strong>          <hr>          {{camera.name}} Activity #{{event.id | number: \'2.0\'}}        </span>      </button>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CameraEventsComponent', 'selector': 'app-camera-events'},{'name': 'CameraFormComponent', 'selector': 'app-camera-form'},{'name': 'CameraListComponent', 'selector': 'app-camera-list'},{'name': 'CameraMapComponent', 'selector': 'app-camera-map'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CameraEventsComponent'};
