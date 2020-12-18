@@ -773,17 +773,17 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;
-import { tap                         } from &#x27;rxjs/operators&#x27;
-import { HttpClient                  } from &#x27;@angular/common/http&#x27;
-import { EventEmitter   , Injectable } from &#x27;@angular/core&#x27;
-import { LoggerScope                 } from &#x27;@common/enums/logger-scope.enum&#x27;
-import { KeyValue                    } from &#x27;@common/helpers/key-value&#x27;
-import { MapOptions                  } from &#x27;@common/helpers/map.config&#x27;
-import { CameraEvent                 } from &#x27;@common/models/camera-event.model&#x27;
-import { Camera                      } from &#x27;@common/models/camera.model&#x27;
-import { LoggerService               } from &#x27;@common/services/logger.service&#x27;
-import { environment                 } from &#x27;@env/environment.prod&#x27;
-import { Loader                      } from &#x27;@googlemaps/js-api-loader&#x27;
+import { tap } from &#x27;rxjs/operators&#x27;
+import { HttpClient } from &#x27;@angular/common/http&#x27;
+import { EventEmitter, Injectable } from &#x27;@angular/core&#x27;
+import { LoggerScope } from &#x27;@common/enums/logger-scope.enum&#x27;
+import { KeyValue } from &#x27;@common/helpers/key-value&#x27;
+import { MapOptions } from &#x27;@common/helpers/map.config&#x27;
+import { CameraEvent } from &#x27;@common/models/camera-event.model&#x27;
+import { Camera } from &#x27;@common/models/camera.model&#x27;
+import { LoggerService } from &#x27;@common/services/logger.service&#x27;
+import { environment } from &#x27;@env/environment.prod&#x27;
+import { Loader } from &#x27;@googlemaps/js-api-loader&#x27;
 
 @Injectable()
 export class CameraMapService {
@@ -844,7 +844,8 @@ export class CameraMapService {
 }
 export type GoogleMap &#x3D; google.maps.Map;
 export type MapLatLng &#x3D; google.maps.LatLng;
-export type MapMarker &#x3D; google.maps.Marker;</code></pre>
+export type MapMarker &#x3D; google.maps.Marker;
+export type MarkerOptions &#x3D; google.maps.ReadonlyMarkerOptions;</code></pre>
     </div>
 
 </div>

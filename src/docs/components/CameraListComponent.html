@@ -603,7 +603,6 @@ export class CameraListComponent implements OnInit {
     this.currentCameraChange.emit(this.currentCamera);
   }
   public addCamera(camera: Camera &#x3D; this.cameraForm.value) {
-    console.log(camera)
     this.mapService.addCamera(camera);
   }
 }

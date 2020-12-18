@@ -70,6 +70,6 @@ export class CameraMapComponent implements OnInit {
   }
   private onEventChanged(event: CameraEvent) {
     /* TODO: Update the map to zoom on the current selection */
-    this.selectedCamera = event;
+    this.selectedEvent = event;
   }
 }
