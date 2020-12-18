@@ -1,15 +1,16 @@
 import { BehaviorSubject, Observable } from 'rxjs'
-import { tap                         } from 'rxjs/operators'
-import { HttpClient                  } from '@angular/common/http'
-import { EventEmitter   , Injectable } from '@angular/core'
-import { LoggerScope                 } from '@common/enums/logger-scope.enum'
-import { KeyValue                    } from '@common/helpers/key-value'
-import { MapOptions                  } from '@common/helpers/map.config'
-import { CameraEvent                 } from '@common/models/camera-event.model'
-import { Camera                      } from '@common/models/camera.model'
-import { LoggerService               } from '@common/services/logger.service'
-import { environment                 } from '@env/environment.prod'
-import { Loader                      } from '@googlemaps/js-api-loader'
+import { tap } from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http'
+import { EventEmitter, Injectable } from '@angular/core'
+import { LoggerScope } from '@common/enums/logger-scope.enum'
+import { KeyValue } from '@common/helpers/key-value'
+import { MapOptions } from '@common/helpers/map.config'
+import { CameraEvent } from '@common/models/camera-event.model'
+import { Camera } from '@common/models/camera.model'
+import { LoggerService } from '@common/services/logger.service'
+import { environment } from '@env/environment.prod'
+import { Loader } from '@googlemaps/js-api-loader'
+import { EventType } from '@common/enums/event-type.enum'
 
 @Injectable()
 export class CameraMapService {
@@ -30,7 +31,7 @@ export class CameraMapService {
   private async getCameras(): Promise<Camera[]> {
     return await this.http
       .get<Camera[]>('cameras')
-      .pipe(tap(result => this._cameraList = result))
+      .pipe(tap(result => this._cameraList = result.map(cam => new Camera(cam.name, cam.id, cam.coordinates))))
       .pipe(tap(result => this.cameraList$.next(result)))
       .pipe(tap(result => this.logger.log(LoggerScope.Cameras, result)))
       .toPromise()
@@ -40,8 +41,7 @@ export class CameraMapService {
       emitter => {
         setInterval(() => {
           if (this._eventsList?.key) {
-            console.log('Gotcha!');
-            this._eventsList?.value?.push(new CameraEvent(this._eventsList?.key));
+            this._eventsList?.value?.push(new CameraEvent(this._eventsList?.key, this._eventsList?.value.length + 1).random());
             emitter.next(this._eventsList.value.slice());
           }
         }, 500);
@@ -63,6 +63,10 @@ export class CameraMapService {
       this._eventsList = { key: camera, value: new Array<CameraEvent>() };
       this._camRefresh.next();
     }
+  }
+  public refreshEvents(camera: Camera) {
+    this._eventsList = { key: camera, value: new Array<CameraEvent>() };
+    this._camRefresh.next();
   }
   public getEventById(id: number): CameraEvent {
     return this._eventsList.value

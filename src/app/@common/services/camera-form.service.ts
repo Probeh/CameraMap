@@ -8,14 +8,15 @@ export class CameraFormService {
   // ======================================= //
   constructor() { }
   // ======================================= //
-  public initialize(): FormGroup {
+  public createForm(): FormGroup {
     this.cameraForm = new FormGroup({
       id: new FormControl(),
       name: new FormControl('', Validators.required),
       coordinates: new FormGroup({
         lat: new FormControl(0, Validators.required),
         lng: new FormControl(0, Validators.required)
-      })
+      }),
+      description: new FormControl('')
     });
     return this.cameraForm;
   }

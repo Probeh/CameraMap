@@ -9,15 +9,16 @@ export class CameraEvent extends ModelBase<CameraEvent> {
   public camera     : Camera     ;
   public coordinates: Geolocation;
   // ======================================= //
-  constructor(camera: Camera, id?: number, event?: EventType, coordinates?: Geolocation) {
+  constructor(camera: Camera, id?: number, event?: EventType | string, coordinates?: Geolocation) {
     super(event, id);
     // ======================================= //
-    this.camera      = camera        ;
-    this.cameraId    = camera     .id;
-    this.coordinates = coordinates   ;
+    this.camera      = camera         ;
+    this.cameraId    = camera.id      ;
+    this.coordinates = coordinates    ;
   }
   // ======================================= //
-  public random() {
-
+  public random(): CameraEvent {
+    super.name = Object.values(EventType)[Math.floor(Math.random() * (Object.values(EventType).length))];
+    return this;
   }
 }

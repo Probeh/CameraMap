@@ -47,7 +47,7 @@ body {
           height: 43px;
         }
         .content-card-body {
-          max-height: calc(100vh - 93px);
+          max-height: calc(100vh - 143px);
           overflow-y: auto;
         }
       }
@@ -57,45 +57,10 @@ body {
       .content-card-footer {
         @extend .content-card;
         padding: 10px;
+        max-height: 50px;
         position: absolute;
         width: 100%;
         bottom: 0%;
-        .content-card-header {
-          padding: 0px !important;
-        }
-        .content-card-body {
-          overflow-y: auto;
-          position: relative;
-
-          .content-form {
-            margin-bottom: 10px;
-            height: 300px;
-            overflow-y: auto;
-            max-height: 300px;
-
-          }
-          .content-options {
-            padding: 10px;
-            position: absolute;
-            bottom: 0%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-          }
-        }
-      }
-      .content-card-footer.collapsed {
-        .content-card-body {
-          height: 0px;
-          display: none;
-        }
-      }
-      .content-card-footer.expanded {
-        .content-card-body {
-          height: 350px;
-          display: block;
-        }
       }
     }
   }
@@ -114,14 +79,20 @@ body {
 .title {
   color: $secondary;
 }
+hr {
+  margin: 5px 0px;
+}
 .list-group-item {
   font-size: 12px;
+  display: flex;
+  align-items: center;
   color: $gray;
   .fa {
     padding: 7.5px;
     border-radius: 50%;
     border: 1px solid $secondary;
     color: $secondary;
-    margin-right: 7.5px;
+    // margin-right: 7.5px;
+    margin-right: 20px;
   }
 }

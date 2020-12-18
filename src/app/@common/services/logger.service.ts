@@ -21,10 +21,10 @@ export class LoggerService {
 
   private print() {
     console.clear();
-    Object.keys(this.logs).forEach(group => {
-      console.groupCollapsed(`%c\t\t ${group} List ( ${this.logs[group].length} Items ) \t\t`, `background: #007bff; color: white; font-size:14px; font-weight: bolder`);
-      const elements: Array<any> = this.logs[group];
-      const maxLngth: number = elements.slice().sort((a, b) => b.name.length - a.name.length)[0].name.length;
+    Object.keys(this.logs).forEach((group: string) => {
+      const elements: Array<any> = this.logs[group].sort((a,b) => (b.created as Date)?.valueOf() - (a.created as Date)?.valueOf());
+      console.groupCollapsed(`%c\t\t ${group} List ( ${elements.length} Total ) \t\t`, `background: #007bff; color: white; font-size:14px; font-weight: bolder`);
+      const maxLngth: number = elements.slice().sort((a, b) => b.name?.length - a.name?.length)[0].name?.length;
       elements.forEach(item => {
         const title: string = this.indentation(item.name, maxLngth)
         console.groupCollapsed(`%c\t\ ${group} item #${item.id} - ${title} \t\t`, `background: #17a2b8; color: white; font-size:14px; font-weight: bolder`);

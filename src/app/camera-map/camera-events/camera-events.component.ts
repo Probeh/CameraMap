@@ -19,6 +19,9 @@ export class CameraEventsComponent implements OnInit {
   constructor(private mapService: CameraMapService) { }
   ngOnInit() { this.cameraEvents$ = this.mapService.eventsList$; }
   // ======================================= //
+  public refreshList() {
+    this.mapService.refreshEvents(this.camera);
+  }
   public onSelection(camera: Camera) {
     this.camera = camera;
     this.mapService.getCameraEvents(camera);
