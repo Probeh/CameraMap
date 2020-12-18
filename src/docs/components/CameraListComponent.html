@@ -138,10 +138,6 @@
                                     <span class="modifier">Public</span>
                                 <a href="#cameraList$">cameraList$</a>
                             </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#collapsed">collapsed</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -167,7 +163,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#toggleForm">toggleForm</a>
+                                <a href="#saveCamera">saveCamera</a>
                             </li>
                         </ul>
                     </td>
@@ -220,7 +216,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -349,8 +345,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:26</a></div>
                 </td>
             </tr>
 
@@ -388,8 +384,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -429,8 +425,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:32</a></div>
                 </td>
             </tr>
 
@@ -481,28 +477,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="toggleForm"></a>
+                    <a name="saveCamera"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            toggleForm
+                            saveCamera
                         </b>
-                        <a href="#toggleForm"><span class="icon ion-ios-link"></span></a>
+                        <a href="#saveCamera"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>toggleForm()</code>
+                    <code>saveCamera()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -545,7 +541,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -569,39 +565,6 @@
                         <td class="col-md-4">
                             <i>Type : </i>        <code><a href="../classes/Camera.html" target="_self" >Observable&lt;Camera[]&gt;</a></code>
 
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/camera-map/camera-list/camera-list.component.ts:19</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="collapsed"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            collapsed</b>
-                            <a href="#collapsed"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>true</code>
                         </td>
                     </tr>
                         <tr>
@@ -636,29 +599,18 @@ export class CameraListComponent implements OnInit {
   @Input() public selection: Camera;
   @Output() public selectionChange: EventEmitter&lt;Camera&gt; &#x3D; new EventEmitter();
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  public collapsed: boolean &#x3D; true;
   public cameraList$: Observable&lt;Camera[]&gt;;
   public cameraForm: FormGroup;
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
   constructor(private mapService: CameraMapService, private formService: CameraFormService) { }
   ngOnInit() {
     this.cameraList$ &#x3D; this.mapService.cameraList$;
-    this.cameraForm &#x3D; this.formService.initialize();
   }
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  public toggleForm() {
-    const footer: HTMLElement &#x3D; document.querySelector(&#x27;.content-card-footer&#x27;);
-    const center: HTMLElement &#x3D; footer.querySelector(&#x27;.content-card-body&#x27;);
-    if (footer.classList.contains(&#x27;collapsed&#x27;)) {
-      footer.classList.replace(&#x27;collapsed&#x27;, &#x27;expanded&#x27;);
-      this.collapsed &#x3D; false;
-    }
-    else {
-      footer.classList.replace(&#x27;expanded&#x27;, &#x27;collapsed&#x27;);
-      this.collapsed &#x3D; true;
-    }
-  }
   public addCamera() {
+    this.cameraForm &#x3D; this.formService.createForm();
+  }
+  public saveCamera() {
     this.mapService.addCamera(this.cameraForm.value);
   }
   public onSelection(id: number) {
@@ -687,19 +639,55 @@ export class CameraListComponent implements OnInit {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class&#x3D;&quot;content-card-footer collapsed&quot;&gt;
-  &lt;div class&#x3D;&quot;content-card-header&quot;&gt;
-    &lt;button
-      class&#x3D;&quot;btn btn-block&quot;
-      [ngClass]&#x3D;&quot;{&#x27;btn-outline-info&#x27;: this.collapsed, &#x27;btn-outline-danger&#x27;: !this.collapsed}&quot;
-      (click)&#x3D;&quot;this.toggleForm()&quot;
-    &gt;{{this.collapsed ? &#x27;Add&#x27; : &#x27;Cancel&#x27;}}&lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;content-card-body&quot;&gt;
-    &lt;div class&#x3D;&quot;content-form shadow&quot;&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;content-options&quot;&gt;
-      &lt;button class&#x3D;&quot;btn btn-sm btn-outline-primary&quot;&gt;&lt;i class&#x3D;&quot;fa fa-save&quot;&gt;&lt;/i&gt; Save&lt;/button&gt;
-      &lt;button class&#x3D;&quot;btn btn-sm btn-outline-danger&quot;&gt;&lt;i class&#x3D;&quot;fa fa-close&quot;&gt;&lt;/i&gt; Clear&lt;/button&gt;
+&lt;div class&#x3D;&quot;content-card-footer&quot;&gt;
+  &lt;button
+    type&#x3D;&quot;button&quot;
+    data-target&#x3D;&quot;#modelId&quot;
+    data-toggle&#x3D;&quot;modal&quot;
+    class&#x3D;&quot;btn btn-block btn-outline-info&quot;
+    (click)&#x3D;&quot;this.addCamera()&quot;
+  &gt;
+    &lt;i class&#x3D;&quot;fa fa-plus&quot;&gt;&lt;/i&gt; Add Camera&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div
+  class&#x3D;&quot;modal fade&quot;
+  id&#x3D;&quot;modelId&quot;
+  tabindex&#x3D;&quot;-1&quot;
+  role&#x3D;&quot;dialog&quot;
+  aria-labelledby&#x3D;&quot;modelTitleId&quot;
+  aria-hidden&#x3D;&quot;true&quot;
+&gt;
+  &lt;div
+    class&#x3D;&quot;modal-dialog&quot;
+    role&#x3D;&quot;document&quot;
+  &gt;
+    &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+      &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+        &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Modal title&lt;/h5&gt;
+        &lt;button
+          type&#x3D;&quot;button&quot;
+          class&#x3D;&quot;close&quot;
+          data-dismiss&#x3D;&quot;modal&quot;
+          aria-label&#x3D;&quot;Close&quot;
+        &gt;
+          &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+        Body
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+        &lt;button
+          type&#x3D;&quot;button&quot;
+          class&#x3D;&quot;btn btn-secondary&quot;
+          data-dismiss&#x3D;&quot;modal&quot;
+        &gt;Close&lt;/button&gt;
+        &lt;button
+          type&#x3D;&quot;button&quot;
+          class&#x3D;&quot;btn btn-primary&quot;
+        &gt;Save&lt;/button&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -741,7 +729,7 @@ export class CameraListComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">Available Cameras</div>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let camera of this.cameraList$ | async; index as i"        type="button"        class="btn list-group-item list-group-item-action"        (click)="this.onSelection(camera.id)"      >        <i class="fa fa-video-camera"></i>        #{{i+1 | number: \'2.0\'}} {{camera.name}}</button>    </div>  </div></div><div class="content-card-footer collapsed">  <div class="content-card-header">    <button      class="btn btn-block"      [ngClass]="{\'btn-outline-info\': this.collapsed, \'btn-outline-danger\': !this.collapsed}"      (click)="this.toggleForm()"    >{{this.collapsed ? \'Add\' : \'Cancel\'}}</button>  </div>  <div class="content-card-body">    <div class="content-form shadow"></div>    <div class="content-options">      <button class="btn btn-sm btn-outline-primary"><i class="fa fa-save"></i> Save</button>      <button class="btn btn-sm btn-outline-danger"><i class="fa fa-close"></i> Clear</button>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">Available Cameras</div>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let camera of this.cameraList$ | async; index as i"        type="button"        class="btn list-group-item list-group-item-action"        (click)="this.onSelection(camera.id)"      >        <i class="fa fa-video-camera"></i>        #{{i+1 | number: \'2.0\'}} {{camera.name}}</button>    </div>  </div></div><div class="content-card-footer">  <button    type="button"    data-target="#modelId"    data-toggle="modal"    class="btn btn-block btn-outline-info"    (click)="this.addCamera()"  >    <i class="fa fa-plus"></i> Add Camera</button></div><div  class="modal fade"  id="modelId"  tabindex="-1"  role="dialog"  aria-labelledby="modelTitleId"  aria-hidden="true">  <div    class="modal-dialog"    role="document"  >    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title">Modal title</h5>        <button          type="button"          class="close"          data-dismiss="modal"          aria-label="Close"        >          <span aria-hidden="true">&times;</span>        </button>      </div>      <div class="modal-body">        Body      </div>      <div class="modal-footer">        <button          type="button"          class="btn btn-secondary"          data-dismiss="modal"        >Close</button>        <button          type="button"          class="btn btn-primary"        >Save</button>      </div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CameraEventsComponent', 'selector': 'app-camera-events'},{'name': 'CameraListComponent', 'selector': 'app-camera-list'},{'name': 'CameraMapComponent', 'selector': 'app-camera-map'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CameraListComponent'};

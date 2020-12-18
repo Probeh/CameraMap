@@ -18,52 +18,127 @@
 <div class="content-card-footer">
   <button
     type="button"
-    data-target="#modelId"
+    data-target="#camera-form"
     data-toggle="modal"
     class="btn btn-block btn-outline-info"
-    (click)="this.addCamera()"
   >
     <i class="fa fa-plus"></i> Add Camera</button>
 </div>
 
-<div
-  class="modal fade"
-  id="modelId"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="modelTitleId"
-  aria-hidden="true"
+<app-camera-form
+  (onSubmit)="this.submitCamera()"
+  (onCancel)="this.resetCamera()"
+  [changed]="!this.cameraForm?.pristine"
+  [icon]="'fa fa-video-camera'"
+  [isvalid]="this.cameraForm?.valid"
+  [title]="'New Camera Item'"
 >
-  <div
-    class="modal-dialog"
-    role="document"
-  >
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Body
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-dismiss="modal"
-        >Close</button>
-        <button
-          type="button"
-          class="btn btn-primary"
-        >Save</button>
+  <form [formGroup]="this.cameraForm">
+    <div class="card">
+      <div class="card-header p-1 bg-warning"></div>
+      <div class="card-body">
+        <p
+          class="text-secondary"
+          style="font-size: 18px"
+        >Details</p>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="name">*Name:</label>
+              <input
+                class="form-control form-control-sm"
+                formControlName="name"
+                id="name"
+                name="name"
+                placeholder="Camera name:"
+                type="text"
+              >
+              <div
+                *ngIf="this.validInput(this.cameraForm.get('name'))"
+                class="alert alert-danger"
+                role="alert"
+                style="font-size: smaller;"
+              >
+                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <span class="ml-2 text-muted">(optional)</span>
+              <textarea
+                class="form-control form-control-sm"
+                formControlName="description"
+                id="description"
+                name="description"
+                placeholder="Optional description:"
+                type="text"
+              ></textarea>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+    <hr>
+    <div class="card">
+      <div class="card-header p-1 bg-info"></div>
+      <div
+        class="card-body"
+        [formGroup]="this.cameraForm.controls['coordinates']"
+      >
+        <p
+          class="text-secondary"
+          style="font-size: 18px"
+        >Geolocation</p>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="lat">*Lat:</label>
+              <input
+                class="form-control form-control-sm"
+                formControlName="lat"
+                id="lat"
+                name="lat"
+                placeholder="Latitude (X):"
+                type="number"
+              >
+              <div
+                *ngIf="this.validInput(this.cameraForm.get('coordinates').get('lat'))"
+                class="alert alert-danger"
+                role="alert"
+                style="font-size: smaller;"
+              >
+                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="lng">*Lng:</label>
+              <input
+                class="form-control form-control-sm"
+                formControlName="lng"
+                id="lng"
+                name="lng"
+                placeholder="Longitude (Y):"
+                type="number"
+              >
+              <div
+                *ngIf="this.validInput(this.cameraForm.get('coordinates').get('lng'))"
+                class="alert alert-danger"
+                role="alert"
+                style="font-size: smaller;"
+              >
+                <strong><i class="fa fa-exclamation-triangle mr-2"></i></strong> This field is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</app-camera-form>

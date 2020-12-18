@@ -10,7 +10,6 @@ import { Camera } from '@common/models/camera.model'
 import { LoggerService } from '@common/services/logger.service'
 import { environment } from '@env/environment.prod'
 import { Loader } from '@googlemaps/js-api-loader'
-import { EventType } from '@common/enums/event-type.enum'
 
 @Injectable()
 export class CameraMapService {

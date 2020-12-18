@@ -93,7 +93,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#initialize">initialize</a>
+                                <a href="#createForm">createForm</a>
                             </li>
                         </ul>
                     </td>
@@ -135,20 +135,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="initialize"></a>
+                    <a name="createForm"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            initialize
+                            createForm
                         </b>
-                        <a href="#initialize"><span class="icon ion-ios-link"></span></a>
+                        <a href="#createForm"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>initialize()</code>
+                    <code>createForm()</code>
                 </td>
             </tr>
 
@@ -222,14 +222,15 @@ export class CameraFormService {
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
   constructor() { }
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  public initialize(): FormGroup {
+  public createForm(): FormGroup {
     this.cameraForm &#x3D; new FormGroup({
       id: new FormControl(),
       name: new FormControl(&#x27;&#x27;, Validators.required),
       coordinates: new FormGroup({
         lat: new FormControl(0, Validators.required),
         lng: new FormControl(0, Validators.required)
-      })
+      }),
+      description: new FormControl(&#x27;&#x27;)
     });
     return this.cameraForm;
   }

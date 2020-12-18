@@ -13,8 +13,8 @@ export class CameraFormService {
       id: new FormControl(),
       name: new FormControl('', Validators.required),
       coordinates: new FormGroup({
-        lat: new FormControl(0, Validators.required),
-        lng: new FormControl(0, Validators.required)
+        lat: new FormControl('', [Validators.required, Validators.pattern('^-?[0-9]\\d*(\\.\\d*)?$')]),
+        lng: new FormControl('', [Validators.required, Validators.pattern('^-?[0-9]\\d*(\\.\\d*)?$')])
       }),
       description: new FormControl('')
     });

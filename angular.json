@@ -75,6 +75,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "aot": true,
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -100,7 +101,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "CameraMap:build"
+            "browserTarget": "CameraMap:build",
+            "aot": true
           },
           "configurations": {
             "production": {

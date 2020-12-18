@@ -157,6 +157,10 @@
                                     <span class="modifier">Public</span>
                                 <a href="#onSelection">onSelection</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#refreshList">refreshList</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -335,8 +339,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -378,6 +382,47 @@
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refreshList"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            refreshList
+                        </b>
+                        <a href="#refreshList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>refreshList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/camera-map/camera-events/camera-events.component.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
                     </div>
                 </td>
             </tr>
@@ -532,6 +577,9 @@ export class CameraEventsComponent implements OnInit {
   constructor(private mapService: CameraMapService) { }
   ngOnInit() { this.cameraEvents$ &#x3D; this.mapService.eventsList$; }
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
+  public refreshList() {
+    this.mapService.refreshEvents(this.camera);
+  }
   public onSelection(camera: Camera) {
     this.camera &#x3D; camera;
     this.mapService.getCameraEvents(camera);
@@ -541,7 +589,7 @@ export class CameraEventsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content-card&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content-card-primary&quot;&gt;
   &lt;div class&#x3D;&quot;content-card-header&quot;&gt;
     &lt;div class&#x3D;&quot;title&quot;&gt;Active Events&lt;/div&gt;
   &lt;/div&gt;
@@ -551,13 +599,21 @@ export class CameraEventsComponent implements OnInit {
         *ngFor&#x3D;&quot;let event of this.cameraEvents$ | async; let index &#x3D; index&quot;
         type&#x3D;&quot;button&quot;
         class&#x3D;&quot;btn list-group-item list-group-item-action&quot;
-      &gt;
-        &lt;i class&#x3D;&quot;fa fa-flag&quot;&gt;&lt;/i&gt;
-        {{index}}
-
+      &gt;&lt;i class&#x3D;&quot;fa fa-flag&quot;&gt;&lt;/i&gt;
+        &lt;span&gt;
+          &lt;strong&gt;{{event.name}}&lt;/strong&gt;
+          &lt;hr&gt;
+          {{camera.name}} Activity #{{event.id | number: &#x27;2.0&#x27;}}
+        &lt;/span&gt;
       &lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;content-card-footer&quot;&gt;
+  &lt;button
+    class&#x3D;&quot;btn btn-block btn-outline-info&quot;
+    (click)&#x3D;&quot;this.refreshList()&quot;
+  &gt;&lt;i class&#x3D;&quot;fa fa-refresh&quot;&gt;&lt;/i&gt; Refresh&lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -593,7 +649,7 @@ export class CameraEventsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="content-card">  <div class="content-card-header">    <div class="title">Active Events</div>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let event of this.cameraEvents$ | async; let index = index"        type="button"        class="btn list-group-item list-group-item-action"      >        <i class="fa fa-flag"></i>        {{index}}      </button>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content-card-primary">  <div class="content-card-header">    <div class="title">Active Events</div>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let event of this.cameraEvents$ | async; let index = index"        type="button"        class="btn list-group-item list-group-item-action"      ><i class="fa fa-flag"></i>        <span>          <strong>{{event.name}}</strong>          <hr>          {{camera.name}} Activity #{{event.id | number: \'2.0\'}}        </span>      </button>    </div>  </div></div><div class="content-card-footer">  <button    class="btn btn-block btn-outline-info"    (click)="this.refreshList()"  ><i class="fa fa-refresh"></i> Refresh</button></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CameraEventsComponent', 'selector': 'app-camera-events'},{'name': 'CameraListComponent', 'selector': 'app-camera-list'},{'name': 'CameraMapComponent', 'selector': 'app-camera-map'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CameraEventsComponent'};

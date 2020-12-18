@@ -150,7 +150,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(camera: <a href="../classes/Camera.html">Camera</a>, id?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, event?: <a href="../undefineds/EventType.html">EventType</a>, coordinates?: <a href="../interfaces/Geolocation.html">Geolocation</a>)</code>
+<code>constructor(camera: <a href="../classes/Camera.html">Camera</a>, id?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, event?: <a href="../undefineds/EventType.html">EventType | string</a>, coordinates?: <a href="../interfaces/Geolocation.html">Geolocation</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -200,7 +200,7 @@
                                                         <td>event</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../miscellaneous/enumerations.html#EventType" target="_self" >EventType</a></code>
+                                                                        <code><a href="../miscellaneous/enumerations.html#EventType" target="_self" >EventType | string</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -501,7 +501,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/CameraEvent.html" target="_self" >CameraEvent</a></code>
 
                     </div>
                 </td>
@@ -529,16 +529,17 @@ export class CameraEvent extends ModelBase&lt;CameraEvent&gt; {
   public camera     : Camera     ;
   public coordinates: Geolocation;
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  constructor(camera: Camera, id?: number, event?: EventType, coordinates?: Geolocation) {
+  constructor(camera: Camera, id?: number, event?: EventType | string, coordinates?: Geolocation) {
     super(event, id);
     // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-    this.camera      &#x3D; camera        ;
-    this.cameraId    &#x3D; camera     .id;
-    this.coordinates &#x3D; coordinates   ;
+    this.camera      &#x3D; camera         ;
+    this.cameraId    &#x3D; camera.id      ;
+    this.coordinates &#x3D; coordinates    ;
   }
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  public random() {
-
+  public random(): CameraEvent {
+    super.name &#x3D; Object.values(EventType)[Math.floor(Math.random() * (Object.values(EventType).length))];
+    return this;
   }
 }
 </code></pre>
