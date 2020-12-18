@@ -12,6 +12,7 @@ export class CameraFormComponent implements OnInit {
   @Output() public onSubmit: EventEmitter<Camera> = new EventEmitter();
   @Input() formGroup: FormGroup;
   @Input() formTitle: string;
+  @Input() formIcon: string;
   // ======================================= //
   constructor() { }
   ngOnInit() { }

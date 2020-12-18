@@ -4,13 +4,13 @@
   </div>
   <div class="content-body">
     <div class="content-panel">
-      <app-camera-list [(selection)]="this.current"></app-camera-list>
+      <app-camera-list [(currentCamera)]="this.currentCamera"></app-camera-list>
     </div>
     <div class="content-main">
-      <app-camera-map [(selection)]="this.current"></app-camera-map>
+      <app-camera-map [(currentCamera)]="this.currentCamera"></app-camera-map>
     </div>
     <div class="content-panel">
-      <app-camera-events [selection]="this.current"></app-camera-events>
+      <app-camera-events [currentCamera]="this.currentCamera"></app-camera-events>
     </div>
   </div>
 </div>

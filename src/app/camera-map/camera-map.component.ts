@@ -1,9 +1,9 @@
-import { Observable } from 'rxjs'
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
-import { CameraEvent } from '@common/models/camera-event.model'
-import { Camera } from '@common/models/camera.model'
-import { CameraMapService, GoogleMap, MapLatLng, MapMarker } from '@common/services/camera-map.service'
-import { Geolocation } from '@common/models/geolocation.model'
+import { Observable                                            } from 'rxjs'
+import { Component       , EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { CameraEvent                                           } from '@common/models/camera-event.model'
+import { Camera                                                } from '@common/models/camera.model'
+import { Geolocation                                           } from '@common/models/geolocation.model'
+import { CameraMapService, GoogleMap, MapLatLng, MapMarker     } from '@common/services/camera-map.service'
 
 @Component({
   selector: 'app-camera-map',
@@ -12,14 +12,16 @@ import { Geolocation } from '@common/models/geolocation.model'
 })
 export class CameraMapComponent implements OnInit {
   // ======================================= //
-  @Input() public set selection(value: Camera) { this.onSelectionInput(value); };
-  @Output() public selectionChange: EventEmitter<Camera> = new EventEmitter();
+  @Input() public set currentCamera(camera: Camera) { this.onCameraChanged(camera); };
+  @Input() public set currentEvent(event: CameraEvent) { this.onEventChanged(event); };
+  @Output() public currentCameraChange: EventEmitter<Camera> = new EventEmitter();
   // ======================================= //
   public cameraList$: Observable<Camera[]>;
   public eventsList$: Observable<CameraEvent[]>;
   // ======================================= //
-  public currentCam: Camera;
   public googleMaps: GoogleMap;
+  public selectedCamera: Camera;
+  public selectedEvent: CameraEvent;
   // ======================================= //
   constructor(private mapService: CameraMapService) { }
   ngOnInit() {
@@ -57,12 +59,12 @@ export class CameraMapComponent implements OnInit {
       }, (index + 1) * 100);
     }
   }
-  public onCameraSelection(id: number) {
-    this.currentCam = this.mapService.getCameraById(id);
-    this.selectionChange.emit(this.currentCam);
-  }
-  private onSelectionInput(camera: Camera) {
+  private onCameraChanged(camera: Camera) {
     /* TODO: Update the map to zoom on the current selection */
-    this.currentCam = camera;
+    this.selectedCamera = camera;
+  }
+  private onEventChanged(event: CameraEvent) {
+    /* TODO: Update the map to zoom on the current selection */
+    this.selectedCamera = event;
   }
 }

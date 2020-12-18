@@ -1,15 +1,15 @@
 import { BehaviorSubject, Observable } from 'rxjs'
-import { tap } from 'rxjs/operators'
-import { HttpClient } from '@angular/common/http'
-import { EventEmitter, Injectable } from '@angular/core'
-import { LoggerScope } from '@common/enums/logger-scope.enum'
-import { KeyValue } from '@common/helpers/key-value'
-import { MapOptions } from '@common/helpers/map.config'
-import { CameraEvent } from '@common/models/camera-event.model'
-import { Camera } from '@common/models/camera.model'
-import { LoggerService } from '@common/services/logger.service'
-import { environment } from '@env/environment.prod'
-import { Loader } from '@googlemaps/js-api-loader'
+import { tap                         } from 'rxjs/operators'
+import { HttpClient                  } from '@angular/common/http'
+import { EventEmitter   , Injectable } from '@angular/core'
+import { LoggerScope                 } from '@common/enums/logger-scope.enum'
+import { KeyValue                    } from '@common/helpers/key-value'
+import { MapOptions                  } from '@common/helpers/map.config'
+import { CameraEvent                 } from '@common/models/camera-event.model'
+import { Camera                      } from '@common/models/camera.model'
+import { LoggerService               } from '@common/services/logger.service'
+import { environment                 } from '@env/environment.prod'
+import { Loader                      } from '@googlemaps/js-api-loader'
 
 @Injectable()
 export class CameraMapService {
@@ -66,16 +66,6 @@ export class CameraMapService {
   public refreshEvents(camera: Camera) {
     this._eventsList = { key: camera, value: new Array<CameraEvent>() };
     this._camRefresh.next();
-  }
-  public getEventById(id: number): CameraEvent {
-    return this._eventsList.value
-      .slice()
-      .find(x => x.id == id);
-  }
-  public getCameraById(id: number): Camera {
-    return this._cameraList
-      .slice()
-      .find(x => x.id == id);
   }
 }
 export type GoogleMap = google.maps.Map;

@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core'
+import { CameraEvent } from '@common/models/camera-event.model';
 import { Camera } from '@common/models/camera.model'
 
 @Component({
@@ -8,5 +9,6 @@ import { Camera } from '@common/models/camera.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public current: Camera;
+  public currentCamera: Camera;
+  public currentEvent: CameraEvent;
 }

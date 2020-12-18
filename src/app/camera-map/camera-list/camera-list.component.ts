@@ -12,8 +12,8 @@ import { FormGroup } from '@angular/forms'
 })
 export class CameraListComponent implements OnInit {
   // ======================================= //
-  @Input() public selection: Camera;
-  @Output() public selectionChange: EventEmitter<Camera> = new EventEmitter();
+  @Input() public currentCamera: Camera;
+  @Output() public currentCameraChange: EventEmitter<Camera> = new EventEmitter();
   // ======================================= //
   public cameraList$: Observable<Camera[]>;
   public cameraForm: FormGroup;
@@ -24,9 +24,9 @@ export class CameraListComponent implements OnInit {
     this.cameraForm = this.formService.createForm();
   }
   // ======================================= //
-  public onSelection(id: number) {
-    this.selection = this.mapService.getCameraById(id);
-    this.selectionChange.emit(this.selection);
+  public onSelection(camera: Camera) {
+    this.currentCamera = camera;
+    this.currentCameraChange.emit(this.currentCamera);
   }
   public addCamera(camera: Camera = this.cameraForm.value) {
     console.log(camera)

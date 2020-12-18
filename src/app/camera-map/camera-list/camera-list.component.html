@@ -16,7 +16,7 @@
         *ngFor="let camera of this.cameraList$ | async; index as i"
         type="button"
         class="btn list-group-item list-group-item-action"
-        (click)="this.onSelection(camera.id)"
+        (click)="this.onSelection(camera)"
       >
         <i class="fa fa-video-camera"></i>
         #{{i+1 | number: '2.0'}} {{camera.name | titlecase}}</button>
@@ -27,6 +27,7 @@
 <app-camera-form
   (onSubmit)="this.addCamera()"
   [formGroup]="this.cameraForm"
+  [formIcon]="'video-camera'"
   [formTitle]="'New Camera Item'"
 >
   <div class="card">
