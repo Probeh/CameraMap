@@ -80,13 +80,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/CameraMapModule.html" data-type="entity-link">CameraMapModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-CameraMapModule-4f0fba9cf2151863a54616fc19a33fd2"' : 'data-target="#xs-components-links-module-CameraMapModule-4f0fba9cf2151863a54616fc19a33fd2"' }>
+                                            'data-target="#components-links-module-CameraMapModule-8cefd89f406c3823e182ea790c935ed5"' : 'data-target="#xs-components-links-module-CameraMapModule-8cefd89f406c3823e182ea790c935ed5"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-CameraMapModule-4f0fba9cf2151863a54616fc19a33fd2"' :
-                                            'id="xs-components-links-module-CameraMapModule-4f0fba9cf2151863a54616fc19a33fd2"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-CameraMapModule-8cefd89f406c3823e182ea790c935ed5"' :
+                                            'id="xs-components-links-module-CameraMapModule-8cefd89f406c3823e182ea790c935ed5"' }>
                                             <li class="link">
                                                 <a href="components/CameraEventsComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">CameraEventsComponent</a>
@@ -103,13 +103,17 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-CameraMapModule-4f0fba9cf2151863a54616fc19a33fd2"' : 'data-target="#xs-injectables-links-module-CameraMapModule-4f0fba9cf2151863a54616fc19a33fd2"' }>
+                                        'data-target="#injectables-links-module-CameraMapModule-8cefd89f406c3823e182ea790c935ed5"' : 'data-target="#xs-injectables-links-module-CameraMapModule-8cefd89f406c3823e182ea790c935ed5"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CameraMapModule-4f0fba9cf2151863a54616fc19a33fd2"' :
-                                        'id="xs-injectables-links-module-CameraMapModule-4f0fba9cf2151863a54616fc19a33fd2"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CameraMapModule-8cefd89f406c3823e182ea790c935ed5"' :
+                                        'id="xs-injectables-links-module-CameraMapModule-8cefd89f406c3823e182ea790c935ed5"' }>
+                                        <li class="link">
+                                            <a href="injectables/CameraFormService.html"
+                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>CameraFormService</a>
+                                        </li>
                                         <li class="link">
                                             <a href="injectables/CameraMapService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>CameraMapService</a>
@@ -131,6 +135,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
+                            <li class="link">
+                                <a href="components/AppComponent.html" data-type="entity-link">AppComponent</a>
+                            </li>
                             <li class="link">
                                 <a href="components/NavbarComponent.html" data-type="entity-link">NavbarComponent</a>
                             </li>
@@ -169,6 +176,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span class="icon ion-ios-arrow-down"></span>
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                                <li class="link">
+                                    <a href="injectables/CameraFormService.html" data-type="entity-link">CameraFormService</a>
+                                </li>
                                 <li class="link">
                                     <a href="injectables/CameraMapService.html" data-type="entity-link">CameraMapService</a>
                                 </li>

@@ -1,1 +1,1 @@
-npm run docs && git add . & git commit -m "routine update" & git push -u origin root & firebase deploy & npm run save & exit
+npm run docs && git add . & git commit -m "routine update" & git push -u origin root & ng build --prod & firebase deploy & npm run save & exit

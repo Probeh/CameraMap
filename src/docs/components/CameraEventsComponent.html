@@ -541,11 +541,11 @@ export class CameraEventsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card content-card&quot;&gt;
-  &lt;div class&#x3D;&quot;card-header&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content-card&quot;&gt;
+  &lt;div class&#x3D;&quot;content-card-header&quot;&gt;
     &lt;div class&#x3D;&quot;title&quot;&gt;Active Events&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class&#x3D;&quot;card-body&quot;&gt;
+  &lt;div class&#x3D;&quot;content-card-body&quot;&gt;
     &lt;div class&#x3D;&quot;list-group&quot;&gt;
       &lt;button
         *ngFor&#x3D;&quot;let event of this.cameraEvents$ | async; let index &#x3D; index&quot;
@@ -593,7 +593,7 @@ export class CameraEventsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="card content-card">  <div class="card-header">    <div class="title">Active Events</div>  </div>  <div class="card-body">    <div class="list-group">      <button        *ngFor="let event of this.cameraEvents$ | async; let index = index"        type="button"        class="btn list-group-item list-group-item-action"      >        <i class="fa fa-flag"></i>        {{index}}      </button>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content-card">  <div class="content-card-header">    <div class="title">Active Events</div>  </div>  <div class="content-card-body">    <div class="list-group">      <button        *ngFor="let event of this.cameraEvents$ | async; let index = index"        type="button"        class="btn list-group-item list-group-item-action"      >        <i class="fa fa-flag"></i>        {{index}}      </button>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CameraEventsComponent', 'selector': 'app-camera-events'},{'name': 'CameraListComponent', 'selector': 'app-camera-list'},{'name': 'CameraMapComponent', 'selector': 'app-camera-map'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CameraEventsComponent'};
