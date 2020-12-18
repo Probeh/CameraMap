@@ -44,10 +44,11 @@ body {
           display: flex;
           padding: 0px 15px;
           align-items: center;
+          justify-content: space-between;
           height: 43px;
         }
         .content-card-body {
-          max-height: calc(100vh - 143px);
+          max-height: calc(100vh - 193px);
           overflow-y: auto;
         }
       }
@@ -57,10 +58,14 @@ body {
       .content-card-footer {
         @extend .content-card;
         padding: 10px;
-        max-height: 50px;
+        height: 100px;
         position: absolute;
         width: 100%;
         bottom: 0%;
+
+        .btn-block {
+          height: 100%;
+        }
       }
     }
   }

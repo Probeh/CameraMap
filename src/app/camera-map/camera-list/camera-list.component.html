@@ -1,6 +1,14 @@
 <div class="content-card-primary">
   <div class="content-card-header">
     <div class="title">Available Cameras</div>
+    <button
+      type="button"
+      data-target="#camera-form"
+      data-toggle="modal"
+      class="btn btn-sm btn-outline-info"
+    >
+      <i class="fa fa-plus"></i> Add</button>
+
   </div>
   <div class="content-card-body">
     <div class="list-group">
@@ -11,24 +19,14 @@
         (click)="this.onSelection(camera.id)"
       >
         <i class="fa fa-video-camera"></i>
-        #{{i+1 | number: '2.0'}} {{camera.name}}</button>
+        #{{i+1 | number: '2.0'}} {{camera.name | titlecase}}</button>
     </div>
   </div>
 </div>
-<div class="content-card-footer">
-  <button
-    type="button"
-    data-target="#camera-form"
-    data-toggle="modal"
-    class="btn btn-block btn-outline-info"
-  >
-    <i class="fa fa-plus"></i> Add Camera</button>
-</div>
 
 <app-camera-form
-  (onSubmit)="this.submitCamera()"
   (onCancel)="this.resetCamera()"
-  [changed]="!this.cameraForm?.pristine"
+  (onSubmit)="this.submitCamera()"
   [icon]="'fa fa-video-camera'"
   [isvalid]="this.cameraForm?.valid"
   [title]="'New Camera Item'"

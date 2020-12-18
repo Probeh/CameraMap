@@ -1,4 +1,5 @@
 <div
+  #modalRef
   class="modal fade"
   id="camera-form"
 >
@@ -8,7 +9,7 @@
         <h5 class="modal-title text-info"><i class="{{this.icon}} m-2"></i> {{this.title}}</h5>
         <button
           class="close"
-          data-dismiss="modal"
+          (click)="this.cancelForm()"
         >
           <span>&times;</span>
         </button>
@@ -18,16 +19,14 @@
       </div>
       <div class="modal-footer">
         <button
-          class="btn btn-sm btn-outline-info"
-          data-dismiss="modal"
-          [disabled]="!this.isvalid"
           (click)="this.saveForm()"
+          [disabled]="!this.isvalid"
+          class="btn btn-sm btn-outline-info"
         >
           <i class="fa fa-save"></i> Save</button>
         <button
-          class="btn btn-sm btn-outline-danger"
-          data-dismiss="modal"
           (click)="this.cancelForm()"
+          class="btn btn-sm btn-outline-danger"
         ><i class="fa fa-close"></i> Cancel</button>
       </div>
     </div>

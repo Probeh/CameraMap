@@ -26,7 +26,7 @@ export class CameraListComponent implements OnInit {
   // ======================================= //
   public submitCamera() {
     this.mapService.addCamera(this.cameraForm.value);
-    this.resetCamera()
+    this.resetCamera();
   }
   public resetCamera() {
     this.cameraForm = this.formService.createForm();

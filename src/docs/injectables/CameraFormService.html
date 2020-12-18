@@ -227,8 +227,8 @@ export class CameraFormService {
       id: new FormControl(),
       name: new FormControl(&#x27;&#x27;, Validators.required),
       coordinates: new FormGroup({
-        lat: new FormControl(0, Validators.required),
-        lng: new FormControl(0, Validators.required)
+        lat: new FormControl(&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^-?[0-9]\\d*(\\.\\d*)?$&#x27;)]),
+        lng: new FormControl(&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^-?[0-9]\\d*(\\.\\d*)?$&#x27;)])
       }),
       description: new FormControl(&#x27;&#x27;)
     });
