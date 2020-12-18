@@ -29,7 +29,6 @@ export class CameraListComponent implements OnInit {
     this.currentCameraChange.emit(this.currentCamera);
   }
   public addCamera(camera: Camera = this.cameraForm.value) {
-    console.log(camera)
     this.mapService.addCamera(camera);
   }
 }

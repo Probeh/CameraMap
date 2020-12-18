@@ -1,9 +1,10 @@
 import { Observable                                            } from 'rxjs'
-import { Component       , EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { Component, EventEmitter, Input, OnInit, Output        } from '@angular/core'
+import { KeyValue                                              } from '@common/helpers/key-value'
 import { CameraEvent                                           } from '@common/models/camera-event.model'
 import { Camera                                                } from '@common/models/camera.model'
 import { Geolocation                                           } from '@common/models/geolocation.model'
-import { CameraMapService, GoogleMap, MapLatLng, MapMarker     } from '@common/services/camera-map.service'
+import { CameraMapService, GoogleMap, MapMarker, MarkerOptions } from '@common/services/camera-map.service'
 
 @Component({
   selector: 'app-camera-map',
@@ -19,6 +20,7 @@ export class CameraMapComponent implements OnInit {
   public cameraList$: Observable<Camera[]>;
   public eventsList$: Observable<CameraEvent[]>;
   // ======================================= //
+  public mapMarkers: KeyValue<Camera, MapMarker>[] = new Array();
   public googleMaps: GoogleMap;
   public selectedCamera: Camera;
   public selectedEvent: CameraEvent;
@@ -43,25 +45,28 @@ export class CameraMapComponent implements OnInit {
         const iconSize: number = 24;
         const cameraIcon: string = `https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Circle-icons-camera.svg/${iconSize}px-Circle-icons-camera.svg.png`;
         const coordinates: Geolocation = element.coordinates;
-        const mapPosition: MapLatLng = new google.maps.LatLng(coordinates.lat, coordinates.lng);
-
-        const marker: MapMarker = new google.maps.Marker(
-          {
-            position: mapPosition,
-            map: this.googleMaps,
-            icon: cameraIcon,
-            title: `${element.id} - ${element.name}`,
-            animation: google.maps.Animation.DROP
-          });
-        marker.addListener('click', () => {
-          marker.setAnimation(google.maps.Animation.BOUNCE);
-        });
+        const options: MarkerOptions =
+        {
+          position: new google.maps.LatLng(coordinates.lat, coordinates.lng),
+          map: this.googleMaps,
+          icon: cameraIcon,
+          title: element.description,
+          animation: google.maps.Animation.DROP,
+          clickable: true,
+        };
+        const marker: MapMarker = new google.maps.Marker(options);
+        this.mapMarkers.push(new KeyValue(element, marker));
+        marker.addListener('click', () => this.onCameraChanged(element));
       }, (index + 1) * 100);
     }
   }
   private onCameraChanged(camera: Camera) {
     /* TODO: Update the map to zoom on the current selection */
     this.selectedCamera = camera;
+    this.mapMarkers?.forEach(item => {
+      item?.value?.setAnimation(item.key == camera ? google.maps.Animation.BOUNCE : null);
+    });
+    this.currentCameraChange.next(camera);
   }
   private onEventChanged(event: CameraEvent) {
     /* TODO: Update the map to zoom on the current selection */

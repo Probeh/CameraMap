@@ -11,33 +11,46 @@
   {
     "id": "2",
     "name": "Venus",
+    "description": "Azrieli Center",
     "coordinates": {
-      "lat": 32.083333,
-      "lng": 34.7999968
+      "lat": 32.073292,
+      "lng": 34.792276
     }
   },
   {
     "id": "3",
     "name": "Saturn",
+    "description": "Sarona Center",
     "coordinates": {
-      "lat": 32.083333,
-      "lng": 34.7999968
+      "lat": 32.070403,
+      "lng": 34.782733
     }
   },
   {
     "id": "4",
     "name": "Mercury",
+    "description": "Dizengoff Center",
     "coordinates": {
-      "lat": 32.083333,
-      "lng": 34.7999968
+      "lat": 32.074841,
+      "lng": 34.775892
     }
   },
   {
     "id": "5",
     "name": "Jupiter",
+    "description": "Tel-Aviv University",
     "coordinates": {
-      "lat": 32.083333,
-      "lng": 34.7999968
+      "lat": 32.106452,
+      "lng": 34.804645
+    }
+  },
+  {
+    "id": "6",
+    "name": "Uranus",
+    "description": "Wolfson Hospital",
+    "coordinates": {
+      "lat": 32.036673,
+      "lng": 34.764023
     }
   }
 ]

@@ -1,15 +1,15 @@
 import { BehaviorSubject, Observable } from 'rxjs'
-import { tap                         } from 'rxjs/operators'
-import { HttpClient                  } from '@angular/common/http'
-import { EventEmitter   , Injectable } from '@angular/core'
-import { LoggerScope                 } from '@common/enums/logger-scope.enum'
-import { KeyValue                    } from '@common/helpers/key-value'
-import { MapOptions                  } from '@common/helpers/map.config'
-import { CameraEvent                 } from '@common/models/camera-event.model'
-import { Camera                      } from '@common/models/camera.model'
-import { LoggerService               } from '@common/services/logger.service'
-import { environment                 } from '@env/environment.prod'
-import { Loader                      } from '@googlemaps/js-api-loader'
+import { tap } from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http'
+import { EventEmitter, Injectable } from '@angular/core'
+import { LoggerScope } from '@common/enums/logger-scope.enum'
+import { KeyValue } from '@common/helpers/key-value'
+import { MapOptions } from '@common/helpers/map.config'
+import { CameraEvent } from '@common/models/camera-event.model'
+import { Camera } from '@common/models/camera.model'
+import { LoggerService } from '@common/services/logger.service'
+import { environment } from '@env/environment.prod'
+import { Loader } from '@googlemaps/js-api-loader'
 
 @Injectable()
 export class CameraMapService {
@@ -71,3 +71,4 @@ export class CameraMapService {
 export type GoogleMap = google.maps.Map;
 export type MapLatLng = google.maps.LatLng;
 export type MapMarker = google.maps.Marker;
+export type MarkerOptions = google.maps.ReadonlyMarkerOptions;
