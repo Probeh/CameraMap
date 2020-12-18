@@ -15,16 +15,87 @@ body {
   font-size: 14px;
   // ======================================= //
 }
-.content-card {
-  .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .content-header {
     height: 50px;
+    max-height: 50px;
   }
-  .card-body {
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
+  .content-body {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    max-height: calc(100vh-50px);
+
+    .content-main {
+      flex: auto;
+    }
+
+    .content-panel {
+      position: relative;
+      width: 250px;
+      background: $light;
+
+      .content-card {
+        .content-card-header {
+          display: flex;
+          padding: 0px 15px;
+          align-items: center;
+          height: 43px;
+        }
+        .content-card-body {
+          max-height: calc(100vh - 93px);
+        }
+      }
+      .content-card-primary {
+        @extend .content-card;
+      }
+      .content-card-footer {
+        @extend .content-card;
+        padding: 10px;
+        position: absolute;
+        width: 100%;
+        bottom: 0%;
+        .content-card-header {
+          padding: 0px !important;
+        }
+        .content-card-body {
+          overflow-y: auto;
+          position: relative;
+
+          .content-form {
+            margin-bottom: 10px;
+            height: 300px;
+            overflow-y: auto;
+            max-height: 300px;
+
+          }
+          .content-options {
+            position: absolute;
+            bottom: 0%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+          }
+        }
+      }
+      .content-card-footer.collapsed {
+        .content-card-body {
+          height: 0px;
+          display: none;
+        }
+      }
+      .content-card-footer.expanded {
+        .content-card-body {
+          height: 350px;
+          display: block;
+        }
+      }
+    }
   }
 }
 .action-btn {

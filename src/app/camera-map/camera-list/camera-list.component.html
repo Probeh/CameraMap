@@ -1,9 +1,8 @@
-<div class="card content-card">
-  <div class="card-header">
+<div class="content-card-primary">
+  <div class="content-card-header">
     <div class="title">Available Cameras</div>
-    <button class="btn action-btn btn-sm"><i class="fa fa-refresh"></i></button>
   </div>
-  <div class="card-body">
+  <div class="content-card-body">
     <div class="list-group">
       <button
         *ngFor="let camera of this.cameraList$ | async; index as i"
@@ -13,6 +12,22 @@
       >
         <i class="fa fa-video-camera"></i>
         #{{i+1 | number: '2.0'}} {{camera.name}}</button>
+    </div>
+  </div>
+</div>
+<div class="content-card-footer collapsed">
+  <div class="content-card-header">
+    <button
+      class="btn btn-block"
+      [ngClass]="{'btn-outline-info': this.collapsed, 'btn-outline-danger': !this.collapsed}"
+      (click)="this.toggleForm()"
+    >{{this.collapsed ? 'Add' : 'Cancel'}}</button>
+  </div>
+  <div class="content-card-body">
+    <div class="content-form shadow"></div>
+    <div class="content-options">
+      <button class="btn btn-sm btn-outline-primary"><i class="fa fa-save"></i> Save</button>
+      <button class="btn btn-sm btn-outline-danger"><i class="fa fa-close"></i> Clear</button>
     </div>
   </div>
 </div>

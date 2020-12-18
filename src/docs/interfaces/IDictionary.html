@@ -81,7 +81,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/@common/services/logger.service.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/@common/services/logger.service.ts:53</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -93,8 +93,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;
-import { LogScope } from &#x27;@common/enums/logscope.enum&#x27;
-import { ILogEntry } from &#x27;@common/models/log-entry.interface&#x27;
+import { LoggerScope } from &#x27;@common/enums/logger-scope.enum&#x27;
 
 @Injectable()
 export class LoggerService {
@@ -104,7 +103,7 @@ export class LoggerService {
   constructor() { }
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
 
-  public log(group: LogScope | string, ...items: any[]) {
+  public log(group: LoggerScope | string, ...items: any[]) {
     // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
     this.logs[group] &#x3D; this.logs[group]
       ? this.logs[group]
@@ -118,16 +117,32 @@ export class LoggerService {
     console.clear();
     Object.keys(this.logs).forEach(group &#x3D;&gt; {
       console.groupCollapsed(&#x60;%c\t\t ${group} List ( ${this.logs[group].length} Items ) \t\t&#x60;, &#x60;background: #007bff; color: white; font-size:14px; font-weight: bolder&#x60;);
-      this.logs[group].forEach(item &#x3D;&gt; {
-        console.groupCollapsed(&#x60;%c\t\ ${group} item #${item.id} - ${item.name} \t\t&#x60;, &#x60;background: #17a2b8; color: white; font-size:14px; font-weight: bolder&#x60;);
+      const elements: Array&lt;any&gt; &#x3D; this.logs[group];
+      const maxLngth: number &#x3D; elements.slice().sort((a, b) &#x3D;&gt; b.name.length - a.name.length)[0].name.length;
+      elements.forEach(item &#x3D;&gt; {
+        const title: string &#x3D; this.indentation(item.name, maxLngth)
+        console.groupCollapsed(&#x60;%c\t\ ${group} item #${item.id} - ${title} \t\t&#x60;, &#x60;background: #17a2b8; color: white; font-size:14px; font-weight: bolder&#x60;);
         console.table(item);
         console.groupEnd()
       })
     });
     console.groupEnd();
   }
-}
 
+  private indentation(name: string, maxLngth: number) {
+    const difference: number &#x3D; name.length &lt; maxLngth ? maxLngth - name.length : 0;
+    let output: string &#x3D; name;
+    if (difference &gt; 0) {
+      for (let index &#x3D; 1; index &lt;&#x3D; difference; index++) {
+        if (difference % 2 &#x3D;&#x3D; 0 &amp;&amp; difference / index &lt;&#x3D; index) {
+          output &#x3D; &#x60; ${output}&#x60;;
+        }
+        else output &#x3D; &#x60;${output} &#x60;;
+      }
+    }
+    return output;
+  }
+}
 // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
 declare interface IDictionary {
   [group: string]: any[];

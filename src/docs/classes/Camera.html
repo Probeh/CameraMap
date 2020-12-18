@@ -43,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>CameraEvent</li>
+  <li>Camera</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/@common/models/camera-event.model.ts</code>
+            <code>src/app/@common/models/camera.model.ts</code>
         </p>
 
 
@@ -86,14 +86,6 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#camera">camera</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#cameraId">cameraId</a>
-                            </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#coordinates">coordinates</a>
@@ -124,21 +116,6 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#random">random</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
@@ -154,12 +131,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(camera: <a href="../classes/Camera.html">Camera</a>, id?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, event?: <a href="../undefineds/EventType.html">EventType</a>, coordinates?: <a href="../interfaces/Geolocation.html">Geolocation</a>)</code>
+<code>constructor(name?: <a href="../classes/Camera.html">CameraType | string</a>, id?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, coordinates?: <a href="../interfaces/Geolocation.html">Geolocation</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/@common/models/camera-event.model.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/@common/models/camera.model.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -177,22 +154,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>camera</td>
+                                                        <td>name</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/Camera.html" target="_self" >Camera</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>id</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                                        <code><a href="../classes/Camera.html" target="_self" >CameraType | string</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -201,10 +166,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>event</td>
+                                                        <td>id</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../miscellaneous/enumerations.html#EventType" target="_self" >EventType</a></code>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -242,62 +207,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="camera"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            camera</b>
-                            <a href="#camera"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../classes/Camera.html" target="_self" >Camera</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/@common/models/camera-event.model.ts:9</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="cameraId"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            cameraId</b>
-                            <a href="#cameraId"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/@common/models/camera-event.model.ts:8</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="coordinates"></a>
                         <span class="name">
                             <b>
@@ -315,7 +224,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/@common/models/camera-event.model.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/@common/models/camera.model.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -501,53 +410,7 @@
         </table>
 </section>
 
-            <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="random"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            random
-                        </b>
-                        <a href="#random"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>random()</code>
-                </td>
-            </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/@common/models/camera-event.model.ts:20</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
 
 
@@ -557,30 +420,20 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { EventType } from &#x27;@common/enums/event-type.enum&#x27;
-import { Camera } from &#x27;@common/models/camera.model&#x27;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CameraType } from &#x27;@common/enums/camera-type.enum&#x27;
 import { Geolocation } from &#x27;@common/models/geolocation.model&#x27;
-import { ModelBase } from &#x27;@common/models/model-base.model&#x27;;
+import { ModelBase } from &#x27;@common/models/model-base.model&#x27;
 
-export class CameraEvent extends ModelBase&lt;CameraEvent&gt; {
+export class Camera extends ModelBase&lt;Camera&gt; {
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  public cameraId   : number     ;
-  public camera     : Camera     ;
   public coordinates: Geolocation;
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  constructor(camera: Camera, id?: number, event?: EventType, coordinates?: Geolocation) {
-    super(event, id);
+  constructor(name?: CameraType | string, id?: number, coordinates?: Geolocation) {
+    super(name, id);
     // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-    this.camera      &#x3D; camera        ;
-    this.cameraId    &#x3D; camera     .id;
-    this.coordinates &#x3D; coordinates   ;
+    this.coordinates &#x3D; coordinates;
   }
-  // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  public random() {
-
-  }
-}
-</code></pre>
+}</code></pre>
     </div>
 </div>
 
@@ -608,7 +461,7 @@ export class CameraEvent extends ModelBase&lt;CameraEvent&gt; {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'CameraEvent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'Camera.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

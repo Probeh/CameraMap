@@ -18,8 +18,8 @@ export class CameraMapService {
   private _cameraList: Camera[] = new Array<Camera>();
   private _eventsList: KeyValue<Camera, Array<CameraEvent>> = new KeyValue();
   // ======================================= //
-  public cameraList$: BehaviorSubject<Camera[]> = new BehaviorSubject(this._cameraList);
-  public eventsList$: Observable<CameraEvent[]> = new BehaviorSubject(this._eventsList.value);
+  public cameraList$: BehaviorSubject<Camera[]> = new BehaviorSubject(this._cameraList?.slice());
+  public eventsList$: Observable<CameraEvent[]> = new BehaviorSubject(this._eventsList.value?.slice());
   // ======================================= //
   constructor(private options: MapOptions, private logger: LoggerService, private http: HttpClient) {
     this.getCameras();
@@ -53,6 +53,10 @@ export class CameraMapService {
     await new Loader({ apiKey: atob(environment.googleApi), region: this.options.region })
       .load();
     return new google.maps.Map(element, this.options.config) as GoogleMap;
+  }
+  public addCamera(camera: Camera) {
+    this._cameraList.push(camera);
+    this.cameraList$.next(this._cameraList.slice());
   }
   public getCameraEvents(camera: Camera) {
     if (this._eventsList?.key != camera) {

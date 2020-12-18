@@ -145,6 +145,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
+                                <a href="classes/Camera.html" data-type="entity-link">Camera</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/CameraEvent.html" data-type="entity-link">CameraEvent</a>
                             </li>
                             <li class="link">
@@ -152,6 +155,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/MapOptions.html" data-type="entity-link">MapOptions</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ModelBase.html" data-type="entity-link">ModelBase</a>
                             </li>
                         </ul>
                     </li>
@@ -193,16 +199,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
-                                <a href="interfaces/Camera.html" data-type="entity-link">Camera</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/Geolocation.html" data-type="entity-link">Geolocation</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IDictionary.html" data-type="entity-link">IDictionary</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/ILogEntry.html" data-type="entity-link">ILogEntry</a>
                             </li>
                         </ul>
                     </li>

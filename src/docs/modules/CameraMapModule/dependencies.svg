@@ -28,13 +28,13 @@
 <title>cluster_CameraMapModule_providers</title>
 <polygon fill="none" stroke="black" points="536,-78 536,-130 882,-130 882,-78 536,-78"/>
 </g>
-<g id="clust7" class="cluster">
-<title>cluster_CameraMapModule_exports</title>
-<polygon fill="none" stroke="black" points="184,-208 184,-260 706,-260 706,-208 184,-208"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_CameraMapModule_declarations</title>
 <polygon fill="none" stroke="black" points="16,-78 16,-130 528,-130 528,-78 16,-78"/>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_CameraMapModule_exports</title>
+<polygon fill="none" stroke="black" points="184,-208 184,-260 706,-260 706,-208 184,-208"/>
 </g>
 <!-- CameraEventsComponent -->
 <g id="node1" class="node">
