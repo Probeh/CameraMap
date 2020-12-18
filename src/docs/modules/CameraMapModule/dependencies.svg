@@ -24,131 +24,131 @@
 <title>cluster_CameraMapModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-268 1090,-268 1090,-70 8,-70"/>
 </g>
-<g id="clust9" class="cluster">
-<title>cluster_CameraMapModule_providers</title>
-<polygon fill="none" stroke="black" points="536,-78 536,-130 1082,-130 1082,-78 536,-78"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_CameraMapModule_declarations</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 528,-130 528,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="570,-78 570,-130 1082,-130 1082,-78 570,-78"/>
+</g>
+<g id="clust9" class="cluster">
+<title>cluster_CameraMapModule_providers</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 562,-130 562,-78 16,-78"/>
 </g>
 <g id="clust7" class="cluster">
 <title>cluster_CameraMapModule_exports</title>
-<polygon fill="none" stroke="black" points="270,-208 270,-260 792,-260 792,-208 270,-208"/>
+<polygon fill="none" stroke="black" points="303,-208 303,-260 825,-260 825,-208 303,-208"/>
 </g>
 <!-- CameraEventsComponent -->
 <g id="node1" class="node">
 <title>CameraEventsComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="520.47,-122 357.53,-122 357.53,-86 520.47,-86 520.47,-122"/>
-<text text-anchor="middle" x="439" y="-99.8" font-family="Times,serif" font-size="14.00">CameraEventsComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="1074.47,-122 911.53,-122 911.53,-86 1074.47,-86 1074.47,-122"/>
+<text text-anchor="middle" x="993" y="-99.8" font-family="Times,serif" font-size="14.00">CameraEventsComponent</text>
 </g>
 <!-- CameraMapModule -->
 <g id="node4" class="node">
 <title>CameraMapModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="589.24,-187 586.24,-191 565.24,-191 562.24,-187 460.76,-187 460.76,-151 589.24,-151 589.24,-187"/>
-<text text-anchor="middle" x="525" y="-164.8" font-family="Times,serif" font-size="14.00">CameraMapModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="622.24,-187 619.24,-191 598.24,-191 595.24,-187 493.76,-187 493.76,-151 622.24,-151 622.24,-187"/>
+<text text-anchor="middle" x="558" y="-164.8" font-family="Times,serif" font-size="14.00">CameraMapModule</text>
 </g>
 <!-- CameraEventsComponent&#45;&gt;CameraMapModule -->
 <g id="edge1" class="edge">
 <title>CameraEventsComponent&#45;&gt;CameraMapModule</title>
-<path fill="none" stroke="black" d="M490.56,-122.11C490.56,-122.11 490.56,-140.99 490.56,-140.99"/>
-<polygon fill="black" stroke="black" points="487.06,-140.99 490.56,-150.99 494.06,-140.99 487.06,-140.99"/>
+<path fill="none" stroke="black" d="M993,-122.11C993,-141.34 993,-169 993,-169 993,-169 632.65,-169 632.65,-169"/>
+<polygon fill="black" stroke="black" points="632.65,-165.5 622.65,-169 632.65,-172.5 632.65,-165.5"/>
 </g>
 <!-- CameraListComponent -->
 <g id="node2" class="node">
 <title>CameraListComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="339.14,-122 192.86,-122 192.86,-86 339.14,-86 339.14,-122"/>
-<text text-anchor="middle" x="266" y="-99.8" font-family="Times,serif" font-size="14.00">CameraListComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="893.14,-122 746.86,-122 746.86,-86 893.14,-86 893.14,-122"/>
+<text text-anchor="middle" x="820" y="-99.8" font-family="Times,serif" font-size="14.00">CameraListComponent</text>
 </g>
 <!-- CameraListComponent&#45;&gt;CameraMapModule -->
 <g id="edge2" class="edge">
 <title>CameraListComponent&#45;&gt;CameraMapModule</title>
-<path fill="none" stroke="black" d="M308.65,-122.03C308.65,-138.4 308.65,-160 308.65,-160 308.65,-160 450.68,-160 450.68,-160"/>
-<polygon fill="black" stroke="black" points="450.68,-163.5 460.68,-160 450.68,-156.5 450.68,-163.5"/>
+<path fill="none" stroke="black" d="M781.96,-122.03C781.96,-138.4 781.96,-160 781.96,-160 781.96,-160 632.48,-160 632.48,-160"/>
+<polygon fill="black" stroke="black" points="632.48,-156.5 622.48,-160 632.48,-163.5 632.48,-156.5"/>
 </g>
 <!-- CameraMapComponent -->
 <g id="node3" class="node">
 <title>CameraMapComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="174.02,-122 23.98,-122 23.98,-86 174.02,-86 174.02,-122"/>
-<text text-anchor="middle" x="99" y="-99.8" font-family="Times,serif" font-size="14.00">CameraMapComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="728.02,-122 577.98,-122 577.98,-86 728.02,-86 728.02,-122"/>
+<text text-anchor="middle" x="653" y="-99.8" font-family="Times,serif" font-size="14.00">CameraMapComponent</text>
 </g>
 <!-- CameraMapComponent&#45;&gt;CameraMapModule -->
 <g id="edge3" class="edge">
 <title>CameraMapComponent&#45;&gt;CameraMapModule</title>
-<path fill="none" stroke="black" d="M99,-122.11C99,-141.34 99,-169 99,-169 99,-169 450.3,-169 450.3,-169"/>
-<polygon fill="black" stroke="black" points="450.3,-172.5 460.3,-169 450.3,-165.5 450.3,-172.5"/>
+<path fill="none" stroke="black" d="M600.05,-122.11C600.05,-122.11 600.05,-140.99 600.05,-140.99"/>
+<polygon fill="black" stroke="black" points="596.55,-140.99 600.05,-150.99 603.55,-140.99 596.55,-140.99"/>
 </g>
 <!-- CameraEventsComponent  -->
 <g id="node5" class="node">
 <title>CameraEventsComponent </title>
-<polygon fill="#fb8072" stroke="black" points="784.47,-252 617.53,-252 617.53,-216 784.47,-216 784.47,-252"/>
-<text text-anchor="middle" x="701" y="-229.8" font-family="Times,serif" font-size="14.00">CameraEventsComponent </text>
+<polygon fill="#fb8072" stroke="black" points="817.47,-252 650.53,-252 650.53,-216 817.47,-216 817.47,-252"/>
+<text text-anchor="middle" x="734" y="-229.8" font-family="Times,serif" font-size="14.00">CameraEventsComponent </text>
 </g>
 <!-- CameraMapModule&#45;&gt;CameraEventsComponent  -->
 <g id="edge4" class="edge">
 <title>CameraMapModule&#45;&gt;CameraEventsComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M589.45,-178C619.54,-178 648.82,-178 648.82,-178 648.82,-178 648.82,-205.97 648.82,-205.97"/>
-<polygon fill="black" stroke="black" points="645.32,-205.97 648.82,-215.97 652.32,-205.97 645.32,-205.97"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M622.6,-178C655.86,-178 689.51,-178 689.51,-178 689.51,-178 689.51,-205.97 689.51,-205.97"/>
+<polygon fill="black" stroke="black" points="686.01,-205.97 689.51,-215.97 693.01,-205.97 686.01,-205.97"/>
 </g>
 <!-- CameraListComponent  -->
 <g id="node6" class="node">
 <title>CameraListComponent </title>
-<polygon fill="#fb8072" stroke="black" points="600.14,-252 449.86,-252 449.86,-216 600.14,-216 600.14,-252"/>
-<text text-anchor="middle" x="525" y="-229.8" font-family="Times,serif" font-size="14.00">CameraListComponent </text>
+<polygon fill="#fb8072" stroke="black" points="633.14,-252 482.86,-252 482.86,-216 633.14,-216 633.14,-252"/>
+<text text-anchor="middle" x="558" y="-229.8" font-family="Times,serif" font-size="14.00">CameraListComponent </text>
 </g>
 <!-- CameraMapModule&#45;&gt;CameraListComponent  -->
 <g id="edge5" class="edge">
 <title>CameraMapModule&#45;&gt;CameraListComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M525,-187.11C525,-187.11 525,-205.99 525,-205.99"/>
-<polygon fill="black" stroke="black" points="521.5,-205.99 525,-215.99 528.5,-205.99 521.5,-205.99"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M558,-187.11C558,-187.11 558,-205.99 558,-205.99"/>
+<polygon fill="black" stroke="black" points="554.5,-205.99 558,-215.99 561.5,-205.99 554.5,-205.99"/>
 </g>
 <!-- CameraMapComponent  -->
 <g id="node7" class="node">
 <title>CameraMapComponent </title>
-<polygon fill="#fb8072" stroke="black" points="432.02,-252 277.98,-252 277.98,-216 432.02,-216 432.02,-252"/>
-<text text-anchor="middle" x="355" y="-229.8" font-family="Times,serif" font-size="14.00">CameraMapComponent </text>
+<polygon fill="#fb8072" stroke="black" points="465.02,-252 310.98,-252 310.98,-216 465.02,-216 465.02,-252"/>
+<text text-anchor="middle" x="388" y="-229.8" font-family="Times,serif" font-size="14.00">CameraMapComponent </text>
 </g>
 <!-- CameraMapModule&#45;&gt;CameraMapComponent  -->
 <g id="edge6" class="edge">
 <title>CameraMapModule&#45;&gt;CameraMapComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M460.65,-178C427.83,-178 394.76,-178 394.76,-178 394.76,-178 394.76,-205.97 394.76,-205.97"/>
-<polygon fill="black" stroke="black" points="391.26,-205.97 394.76,-215.97 398.26,-205.97 391.26,-205.97"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M493.57,-178C457.03,-178 418.53,-178 418.53,-178 418.53,-178 418.53,-205.97 418.53,-205.97"/>
+<polygon fill="black" stroke="black" points="415.03,-205.97 418.53,-215.97 422.03,-205.97 415.03,-205.97"/>
 </g>
 <!-- CameraFormService -->
 <g id="node8" class="node">
 <title>CameraFormService</title>
-<ellipse fill="#fdb462" stroke="black" cx="983" cy="-104" rx="90.89" ry="18"/>
-<text text-anchor="middle" x="983" y="-99.8" font-family="Times,serif" font-size="14.00">CameraFormService</text>
+<ellipse fill="#fdb462" stroke="black" cx="463" cy="-104" rx="90.89" ry="18"/>
+<text text-anchor="middle" x="463" y="-99.8" font-family="Times,serif" font-size="14.00">CameraFormService</text>
 </g>
 <!-- CameraFormService&#45;&gt;CameraMapModule -->
 <g id="edge7" class="edge">
 <title>CameraFormService&#45;&gt;CameraMapModule</title>
-<path fill="none" stroke="black" d="M983,-122.11C983,-141.34 983,-169 983,-169 983,-169 599.65,-169 599.65,-169"/>
-<polygon fill="black" stroke="black" points="599.65,-165.5 589.65,-169 599.65,-172.5 599.65,-165.5"/>
+<path fill="none" stroke="black" d="M523.79,-117.47C523.79,-117.47 523.79,-140.86 523.79,-140.86"/>
+<polygon fill="black" stroke="black" points="520.29,-140.86 523.79,-150.86 527.29,-140.86 520.29,-140.86"/>
 </g>
 <!-- CameraMapService -->
 <g id="node9" class="node">
 <title>CameraMapService</title>
-<ellipse fill="#fdb462" stroke="black" cx="786" cy="-104" rx="87.94" ry="18"/>
-<text text-anchor="middle" x="786" y="-99.8" font-family="Times,serif" font-size="14.00">CameraMapService</text>
+<ellipse fill="#fdb462" stroke="black" cx="266" cy="-104" rx="87.94" ry="18"/>
+<text text-anchor="middle" x="266" y="-99.8" font-family="Times,serif" font-size="14.00">CameraMapService</text>
 </g>
 <!-- CameraMapService&#45;&gt;CameraMapModule -->
 <g id="edge8" class="edge">
 <title>CameraMapService&#45;&gt;CameraMapModule</title>
-<path fill="none" stroke="black" d="M741.26,-119.6C741.26,-136.17 741.26,-160 741.26,-160 741.26,-160 599.3,-160 599.3,-160"/>
-<polygon fill="black" stroke="black" points="599.3,-156.5 589.3,-160 599.3,-163.5 599.3,-156.5"/>
+<path fill="none" stroke="black" d="M332.35,-115.88C332.35,-132.31 332.35,-160 332.35,-160 332.35,-160 483.64,-160 483.64,-160"/>
+<polygon fill="black" stroke="black" points="483.64,-163.5 493.64,-160 483.64,-156.5 483.64,-163.5"/>
 </g>
 <!-- LoggerService -->
 <g id="node10" class="node">
 <title>LoggerService</title>
-<ellipse fill="#fdb462" stroke="black" cx="612" cy="-104" rx="67.76" ry="18"/>
-<text text-anchor="middle" x="612" y="-99.8" font-family="Times,serif" font-size="14.00">LoggerService</text>
+<ellipse fill="#fdb462" stroke="black" cx="92" cy="-104" rx="67.76" ry="18"/>
+<text text-anchor="middle" x="92" y="-99.8" font-family="Times,serif" font-size="14.00">LoggerService</text>
 </g>
 <!-- LoggerService&#45;&gt;CameraMapModule -->
 <g id="edge9" class="edge">
 <title>LoggerService&#45;&gt;CameraMapModule</title>
-<path fill="none" stroke="black" d="M566.75,-117.47C566.75,-117.47 566.75,-140.86 566.75,-140.86"/>
-<polygon fill="black" stroke="black" points="563.25,-140.86 566.75,-150.86 570.25,-140.86 563.25,-140.86"/>
+<path fill="none" stroke="black" d="M92,-122.11C92,-141.34 92,-169 92,-169 92,-169 483.69,-169 483.69,-169"/>
+<polygon fill="black" stroke="black" points="483.69,-172.5 493.69,-169 483.69,-165.5 483.69,-172.5"/>
 </g>
 </g>
 </svg>

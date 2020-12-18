@@ -48,6 +48,7 @@ body {
         }
         .content-card-body {
           max-height: calc(100vh - 93px);
+          overflow-y: auto;
         }
       }
       .content-card-primary {
